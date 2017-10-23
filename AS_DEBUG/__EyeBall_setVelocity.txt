@@ -29,7 +29,7 @@ Variables:
    15   8 *    COPY     v2, 67108906
                ObjInfo  v2, 0
    17   6 *    PopPtr
-   18   4 *    FREE     v4, 0xba5ec4b0          (type:PhysicsComponent)
+   18   4 *    FREE     v4, 0xe4f5dde0          (type:PhysicsComponent)
 - 32,3 -
    21   4 *    SUSPEND
             0:

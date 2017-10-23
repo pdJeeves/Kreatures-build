@@ -26,9 +26,9 @@ Variables:
    10   8 *    PshVPtr  v8
    11  10 *    PshVPtr  v0
    12  12 *    ADDSi    v56, 134217790
-   14  12 *    REFCPY   0x271bc2d8d10          (i:2687511661840, f:1.32781e-311)
+   14  12 *    REFCPY   0x21ce6c703c0          (i:2323154142144, f:1.14779e-311)
    17  10 *    PopPtr
-   18   8 *    FREE     v8, 0xbc2d8d10          (type:array)
+   18   8 *    FREE     v8, 0xe6c703c0          (type:array)
 - 50,9 -
    21   8 *    SUSPEND
    22   8 *    PshC8    0x4141          (i:16705, f:8.25337e-320)
@@ -48,13 +48,13 @@ Variables:
    40   8 *    SUSPEND
    41   8 *    PshC4    0x1c          (i:28, f:3.92364e-44)
    43   9 *    PshVPtr  v0
-   44  11 *    RefCpyV  v6, 0xba5ebe20          (type:GameObject)
+   44  11 *    RefCpyV  v6, 0xe4f5e6a0          (type:GameObject)
    47  11 *    CALLINTF 841           (void GameObject::set_catagory(Catagory))
-   49   8 *    FREE     v6, 0xba5ebe20          (type:GameObject)
+   49   8 *    FREE     v6, 0xe4f5e6a0          (type:GameObject)
 - 57,6 -
    52   8 *    SUSPEND
             0:
-   53   8 *    FREE     v-2, 0xba573a30          (type:Anchor)
-   56   8 *    FREE     v-4, 0xba5ebbf0          (type:Point2F)
-   59   8 *    FREE     v-6, 0xba573c60          (type:Angle)
+   53   8 *    FREE     v-2, 0xe4eec910          (type:Anchor)
+   56   8 *    FREE     v-4, 0xe4f5e470          (type:Point2F)
+   59   8 *    FREE     v-6, 0xe4eecb40          (type:Angle)
    62   8 *    RET      8

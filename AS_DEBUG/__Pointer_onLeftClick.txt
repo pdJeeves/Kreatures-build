@@ -12,8 +12,8 @@ Variables:
 
 - 43,3 -
     0  16 *    SUSPEND
-    1  16 *    PshGPtr  0x7ff61df1f2a0          (i:140695041077920, f:6.95126e-310)
-    4  18 *    RefCpyV  v2, 0xba560c10          (type:ostream)
+    1  16 *    PshGPtr  0x7ff7a1adf2a0          (i:140701546181280, f:6.95158e-310)
+    4  18 *    RefCpyV  v2, 0xe4ed5220          (type:ostream)
     7  18 *    PopPtr
     8  16 *    PSF      v14
     9  18 *    STR      10         (l:12 s:"left click")
@@ -23,7 +23,7 @@ Variables:
    14  22 *    CALLSYS  45           (string::string(const string&in))
                ObjInfo  v12, 1
    16  18 *    PSF      v12
-   17  20 *    ALLOC    0x271ba53f060, 45             (type:string, string::string(const string&in))
+   17  20 *    ALLOC    0x21ce4eb7a70, 45             (type:string, string::string(const string&in))
    21  16 *    PSF      v12
    22  18 *    CALLSYS  46           (string::~string())
                ObjInfo  v12, 0
@@ -32,8 +32,8 @@ Variables:
    26  20 *    GETOBJ   2
    27  20 *    CALLSYS  158           (ostream@ ostream::opShl(string) const)
    29  16 *    STOREOBJ v16
-   30  16 *    FREE     v2, 0xba560c10          (type:ostream)
-   33  16 *    FREE     v16, 0xba560c10          (type:ostream)
+   30  16 *    FREE     v2, 0xe4ed5220          (type:ostream)
+   33  16 *    FREE     v16, 0xe4ed5220          (type:ostream)
 - 44,3 -
    36  16 *    SUSPEND
             0:

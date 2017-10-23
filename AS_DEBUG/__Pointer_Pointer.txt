@@ -35,14 +35,14 @@ Variables:
    10  55 *    CALLSYS  45           (string::string(const string&in))
                ObjInfo  v12, 1
    12  51 *    PSF      v12
-   13  53 *    ALLOC    0x271ba53f060, 45             (type:string, string::string(const string&in))
+   13  53 *    ALLOC    0x21ce4eb7a70, 45             (type:string, string::string(const string&in))
    17  49 *    PSF      v12
    18  51 *    CALLSYS  46           (string::~string())
                ObjInfo  v12, 0
    20  49 *    VAR      v14
    21  51 *    GETOBJ   0
    22  51 *    CALLSYS  245           (SpriteFile@ SpriteFile(string))
-   24  49 *    FREE     v2, 0xba5ec050          (type:SpriteFile)
+   24  49 *    FREE     v2, 0xe4f5ed30          (type:SpriteFile)
    27  49 *    STOREOBJ v2
 - 14,3 -
    28  49 *    SUSPEND
@@ -50,14 +50,14 @@ Variables:
    30  49 *    CmpPtr   v2, v16
    32  49 *    TZ
    33  49 *    CpyRtoV4 v17
-   34  49 *    FREE     v16, 0xba5ec050          (type:SpriteFile)
+   34  49 *    FREE     v16, 0xe4f5ed30          (type:SpriteFile)
    37  49 *    CpyVtoR4 v17
    38  49 *    JLowZ    +36              (d:76)
 - 16,4 -
             {
    40  49 *    SUSPEND
-   41  49 *    PshGPtr  0x7ff61df1f2a0          (i:140695041077920, f:6.95126e-310)
-   44  51 *    RefCpyV  v19, 0xba560c10          (type:ostream)
+   41  49 *    PshGPtr  0x7ff7a1adf2a0          (i:140701546181280, f:6.95158e-310)
+   44  51 *    RefCpyV  v19, 0xe4ed5220          (type:ostream)
    47  51 *    PopPtr
    48  49 *    PSF      v14
    49  51 *    STR      1         (l:31 s:"unable to ")
@@ -67,7 +67,7 @@ Variables:
    54  55 *    CALLSYS  45           (string::string(const string&in))
                ObjInfo  v12, 1
    56  51 *    PSF      v12
-   57  53 *    ALLOC    0x271ba53f060, 45             (type:string, string::string(const string&in))
+   57  53 *    ALLOC    0x21ce4eb7a70, 45             (type:string, string::string(const string&in))
    61  49 *    PSF      v12
    62  51 *    CALLSYS  46           (string::~string())
                ObjInfo  v12, 0
@@ -76,8 +76,8 @@ Variables:
    66  53 *    GETOBJ   2
    67  53 *    CALLSYS  158           (ostream@ ostream::opShl(string) const)
    69  49 *    STOREOBJ v21
-   70  49 *    FREE     v19, 0xba560c10          (type:ostream)
-   73  49 *    FREE     v21, 0xba560c10          (type:ostream)
+   70  49 *    FREE     v19, 0xe4ed5220          (type:ostream)
+   73  49 *    FREE     v21, 0xe4ed5220          (type:ostream)
 - 19,3 -
             }
             1:
@@ -97,7 +97,7 @@ Variables:
   100  53 *    PshVPtr  v25
   101  55 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   103  53 *    STOREOBJ v23
-  104  53 *    FREE     v25, 0xbc2d70a0          (type:)
+  104  53 *    FREE     v25, 0xe6c70a50          (type:)
   107  53 *    VAR      v23
   108  55 *    STR      2         (l:5 s:"click")
   109  58 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -110,7 +110,7 @@ Variables:
   117  59 *    GETREF   2
   118  59 *    GETOBJREF 4
   119  59 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  121  49 *    FREE     v23, 0xba5eb790          (type:array)
+  121  49 *    FREE     v23, 0xe4f5d980          (type:array)
   124  49 *    PSF      v12
   125  51 *    CALLSYS  46           (string::~string())
 - 20,3 -
@@ -135,7 +135,7 @@ Variables:
   157  53 *    PshVPtr  v25
   158  55 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   160  53 *    STOREOBJ v23
-  161  53 *    FREE     v25, 0xbc2d70a0          (type:)
+  161  53 *    FREE     v25, 0xe6c70a50          (type:)
   164  53 *    VAR      v23
   165  55 *    STR      3         (l:5 s:"clack")
   166  58 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -148,7 +148,7 @@ Variables:
   174  59 *    GETREF   2
   175  59 *    GETOBJREF 4
   176  59 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  178  49 *    FREE     v23, 0xba5eb790          (type:array)
+  178  49 *    FREE     v23, 0xe4f5d980          (type:array)
   181  49 *    PSF      v12
   182  51 *    CALLSYS  46           (string::~string())
 - 21,3 -
@@ -173,7 +173,7 @@ Variables:
   214  53 *    PshVPtr  v25
   215  55 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   217  53 *    STOREOBJ v23
-  218  53 *    FREE     v25, 0xbc2d70a0          (type:)
+  218  53 *    FREE     v25, 0xe6c70a50          (type:)
   221  53 *    VAR      v23
   222  55 *    STR      4         (l:6 s:"pickup")
   223  58 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -186,7 +186,7 @@ Variables:
   231  59 *    GETREF   2
   232  59 *    GETOBJREF 4
   233  59 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  235  49 *    FREE     v23, 0xba5eb790          (type:array)
+  235  49 *    FREE     v23, 0xe4f5d980          (type:array)
   238  49 *    PSF      v12
   239  51 *    CALLSYS  46           (string::~string())
 - 22,3 -
@@ -219,7 +219,7 @@ Variables:
   283  53 *    PshVPtr  v25
   284  55 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   286  53 *    STOREOBJ v23
-  287  53 *    FREE     v25, 0xbc2d70a0          (type:)
+  287  53 *    FREE     v25, 0xe6c70a50          (type:)
   290  53 *    VAR      v23
   291  55 *    STR      5         (l:4 s:"drop")
   292  58 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -232,7 +232,7 @@ Variables:
   300  59 *    GETREF   2
   301  59 *    GETOBJREF 4
   302  59 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  304  49 *    FREE     v23, 0xba5eb790          (type:array)
+  304  49 *    FREE     v23, 0xe4f5d980          (type:array)
   307  49 *    PSF      v12
   308  51 *    CALLSYS  46           (string::~string())
 - 24,3 -
@@ -273,7 +273,7 @@ Variables:
   364  53 *    PshVPtr  v25
   365  55 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   367  53 *    STOREOBJ v23
-  368  53 *    FREE     v25, 0xbc2d70a0          (type:)
+  368  53 *    FREE     v25, 0xe6c70a50          (type:)
   371  53 *    VAR      v23
   372  55 *    STR      6         (l:6 s:"tickle")
   373  58 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -286,7 +286,7 @@ Variables:
   381  59 *    GETREF   2
   382  59 *    GETOBJREF 4
   383  59 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  385  49 *    FREE     v23, 0xba5eb790          (type:array)
+  385  49 *    FREE     v23, 0xe4f5d980          (type:array)
   388  49 *    PSF      v12
   389  51 *    CALLSYS  46           (string::~string())
 - 25,3 -
@@ -315,7 +315,7 @@ Variables:
   427  53 *    PshVPtr  v25
   428  55 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   430  53 *    STOREOBJ v23
-  431  53 *    FREE     v25, 0xbc2d70a0          (type:)
+  431  53 *    FREE     v25, 0xe6c70a50          (type:)
   434  53 *    VAR      v23
   435  55 *    STR      7         (l:5 s:"spank")
   436  58 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -328,7 +328,7 @@ Variables:
   444  59 *    GETREF   2
   445  59 *    GETOBJREF 4
   446  59 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  448  49 *    FREE     v23, 0xba5eb790          (type:array)
+  448  49 *    FREE     v23, 0xe4f5d980          (type:array)
   451  49 *    PSF      v12
   452  51 *    CALLSYS  46           (string::~string())
 - 27,3 -
@@ -339,7 +339,7 @@ Variables:
   458  50 *    SetV2    v35, 0x0
   460  50 *    PshV4    v35
   461  51 *    PSF      v37
-  462  53 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
+  462  53 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
   466  51 *    AllocMem v33, 8
   468  51 *    SetV4    v17, 0x41f00000          (i:1106247680, f:30)
   470  51 *    PshListElmnt v33, 0
@@ -353,7 +353,7 @@ Variables:
   481  53 *    PSF      v31
   482  55 *    CALLSYS  546           (void Point2F::$beh1(const int&in) { float, float })
                ObjInfo  v31, 1
-  484  51 *    FREE     v33, 0xbc2d8f40          (type:)
+  484  51 *    FREE     v33, 0xe6c71e00          (type:)
   487  51 *    PSF      v31
   488  53 *    PshVPtr  v37
   489  55 *    COPY     v2, 67108906
@@ -381,7 +381,7 @@ Variables:
   513  50 *    SetV2    v38, 0x0
   515  50 *    PshV4    v38
   516  51 *    PSF      v37
-  517  53 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
+  517  53 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
   521  51 *    AllocMem v33, 8
   523  51 *    SetV4    v17, 0x40800000          (i:1082130432, f:4)
   525  51 *    PshListElmnt v33, 0
@@ -395,7 +395,7 @@ Variables:
   536  53 *    PSF      v31
   537  55 *    CALLSYS  546           (void Point2F::$beh1(const int&in) { float, float })
                ObjInfo  v31, 1
-  539  51 *    FREE     v33, 0xbc2d8f40          (type:)
+  539  51 *    FREE     v33, 0xe6c71e00          (type:)
   542  51 *    PSF      v31
   543  53 *    PshVPtr  v37
   544  55 *    COPY     v2, 67108906
@@ -428,14 +428,14 @@ Variables:
   574  49 *    PshVPtr  v42
   575  51 *    CALLSYS  651           (SpriteComponent@ RenderComponent::opCast())
   577  49 *    STOREOBJ v46
-  578  49 *    FREE     v42, 0xba5eaca0          (type:RenderComponent)
+  578  49 *    FREE     v42, 0xe4f5e010          (type:RenderComponent)
   581  49 *    JMP      +1              (d:584)
             2:
   583  49 *    ClrVPtr  v46
             3:
   584  49 *    PshVPtr  v46
-  585  51 *    RefCpyV  v40, 0xba5ea840          (type:SpriteComponent)
-  588  51 *    FREE     v46, 0xba5ea840          (type:SpriteComponent)
+  585  51 *    RefCpyV  v40, 0xe4f5fc80          (type:SpriteComponent)
+  588  51 *    FREE     v46, 0xe4f5fc80          (type:SpriteComponent)
   591  51 *    PopPtr
 - 35,3 -
   592  49 *    SUSPEND
@@ -461,12 +461,12 @@ Variables:
   615  49 *    SUSPEND
   616  49 *    PshC4    0x1          (i:1, f:1.4013e-45)
   618  50 *    PshVPtr  v0
-  619  52 *    RefCpyV  v49, 0xba5ebe20          (type:GameObject)
+  619  52 *    RefCpyV  v49, 0xe4f5e6a0          (type:GameObject)
   622  52 *    CALLINTF 841           (void GameObject::set_catagory(Catagory))
-  624  49 *    FREE     v49, 0xba5ebe20          (type:GameObject)
+  624  49 *    FREE     v49, 0xe4f5e6a0          (type:GameObject)
 - 39,3 -
   627  49 *    SUSPEND
-  628  49 *    FREE     v40, 0xba5ea840          (type:SpriteComponent)
-  631  49 *    FREE     v2, 0xba5ec050          (type:SpriteFile)
+  628  49 *    FREE     v40, 0xe4f5fc80          (type:SpriteComponent)
+  631  49 *    FREE     v2, 0xe4f5ed30          (type:SpriteFile)
             0:
   634  49 *    RET      2

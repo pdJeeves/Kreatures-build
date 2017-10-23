@@ -33,8 +33,8 @@ Variables:
    23   8 *    PshVPtr  v0
    24  10 *    ADDSi    v40, 134217787
    26  10 *    GETOBJREF 2
-   27  10 *    REFCPY   0x271ba5e4df0          (i:2687481302512, f:1.32779e-311)
-   30   8 *    FREE     v6, 0xba5e4df0          (type:PhysicalZone_t)
+   27  10 *    REFCPY   0x21ce4f52070          (i:2323123609712, f:1.14778e-311)
+   30   8 *    FREE     v6, 0xe4f52070          (type:PhysicalZone_t)
    33   8 *    PopPtr
 - 1,136 -
    34   6 *    SUSPEND

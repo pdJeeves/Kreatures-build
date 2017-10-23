@@ -30,17 +30,17 @@ Variables:
     7  33 *    SUSPEND
     8  33 *    PshC4    0x14          (i:20, f:2.8026e-44)
    10  34 *    PshVPtr  v0
-   11  36 *    RefCpyV  v5, 0xba5ebe20          (type:GameObject)
+   11  36 *    RefCpyV  v5, 0xe4f5e6a0          (type:GameObject)
    14  36 *    CALLINTF 841           (void GameObject::set_catagory(Catagory))
-   16  33 *    FREE     v5, 0xba5ebe20          (type:GameObject)
+   16  33 *    FREE     v5, 0xe4f5e6a0          (type:GameObject)
 - 13,3 -
    19  33 *    SUSPEND
    20  33 *    SetV1    v6, 0x1
    22  33 *    PshV4    v6
    23  34 *    PshVPtr  v0
-   24  36 *    RefCpyV  v5, 0xba5ebe20          (type:GameObject)
+   24  36 *    RefCpyV  v5, 0xe4f5e6a0          (type:GameObject)
    27  36 *    CALLINTF 845           (void GameObject::set_canCarry(bool))
-   29  33 *    FREE     v5, 0xba5ebe20          (type:GameObject)
+   29  33 *    FREE     v5, 0xe4f5e6a0          (type:GameObject)
 - 15,3 -
    32  33 *    SUSPEND
                VarDecl  2
@@ -53,14 +53,14 @@ Variables:
    42  33 *    PshVPtr  v10
    43  35 *    CALLSYS  651           (SpriteComponent@ RenderComponent::opCast())
    45  33 *    STOREOBJ v14
-   46  33 *    FREE     v10, 0xba5eaca0          (type:RenderComponent)
+   46  33 *    FREE     v10, 0xe4f5e010          (type:RenderComponent)
    49  33 *    JMP      +1              (d:52)
             1:
    51  33 *    ClrVPtr  v14
             2:
    52  33 *    PshVPtr  v14
-   53  35 *    RefCpyV  v8, 0xba5ea840          (type:SpriteComponent)
-   56  35 *    FREE     v14, 0xba5ea840          (type:SpriteComponent)
+   53  35 *    RefCpyV  v8, 0xe4f5fc80          (type:SpriteComponent)
+   56  35 *    FREE     v14, 0xe4f5fc80          (type:SpriteComponent)
    59  35 *    PopPtr
 - 16,3 -
    60  33 *    SUSPEND
@@ -85,7 +85,7 @@ Variables:
 - 19,3 -
    83  33 *    SUSPEND
    84  33 *    PSF      v29
-   85  35 *    ALLOC    0x271ba573c60, 302             (type:Angle, Angle::Angle())
+   85  35 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
    89  33 *    PSF      v27
    90  35 *    CALLSYS  302           (Angle::Angle())
                ObjInfo  v27, 1
@@ -96,7 +96,7 @@ Variables:
                ObjInfo  v27, 0
    97  33 *    VAR      v29
    98  35 *    PSF      v31
-   99  37 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
+   99  37 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
   103  35 *    PshVPtr  v-4
   104  37 *    PshVPtr  v31
   105  39 *    COPY     v2, 67108906
@@ -111,7 +111,7 @@ Variables:
   116  41 *    GETOBJ   4
   117  41 *    GETOBJ   6
   118  41 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
-  120  33 *    FREE     v26, 0xba5e3c70          (type:MovementComponent)
+  120  33 *    FREE     v26, 0xe4f53ab0          (type:MovementComponent)
 - 21,3 -
   123  33 *    SUSPEND
   124  33 *    PshC4    0x3e800000          (i:1048576000, f:0.25)
@@ -120,7 +120,7 @@ Variables:
   129  34 *    STOREOBJ v33
   130  34 *    PshVPtr  v33
   131  36 *    CALLSYS  539           (void PhysicsComponent::set_elasticity(float))
-  133  33 *    FREE     v33, 0xba5ec4b0          (type:PhysicsComponent)
+  133  33 *    FREE     v33, 0xe4f5dde0          (type:PhysicsComponent)
 - 22,3 -
   136  33 *    SUSPEND
   137  33 *    PshC4    0x3dcccccd          (i:1036831949, f:0.1)
@@ -129,7 +129,7 @@ Variables:
   142  34 *    STOREOBJ v33
   143  34 *    PshVPtr  v33
   144  36 *    CALLSYS  537           (void PhysicsComponent::set_friction(float))
-  146  33 *    FREE     v33, 0xba5ec4b0          (type:PhysicsComponent)
+  146  33 *    FREE     v33, 0xe4f5dde0          (type:PhysicsComponent)
 - 23,3 -
   149  33 *    SUSPEND
   150  33 *    SetV4    v6, 0x3f800000          (i:1065353216, f:1)
@@ -138,7 +138,7 @@ Variables:
   155  33 *    STOREOBJ v33
   156  33 *    LoadRObjR v33, v144, 67108905
   159  33 *    WRTV4    v6
-  160  33 *    FREE     v33, 0xba5ec4b0          (type:PhysicsComponent)
+  160  33 *    FREE     v33, 0xe4f5dde0          (type:PhysicsComponent)
 - 25,3 -
   163  33 *    SUSPEND
   164  33 *    SetV1    v6, 0x1
@@ -148,19 +148,19 @@ Variables:
   170  34 *    STOREOBJ v33
   171  34 *    PshVPtr  v33
   172  36 *    CALLSYS  536           (void PhysicsComponent::set_respondToPhysicalZones(bool) const)
-  174  33 *    FREE     v33, 0xba5ec4b0          (type:PhysicsComponent)
+  174  33 *    FREE     v33, 0xe4f5dde0          (type:PhysicsComponent)
 - 26,3 -
   177  33 *    SUSPEND
   178  33 *    SetV1    v6, 0x1
   180  33 *    PshV4    v6
   181  34 *    PshVPtr  v0
-  182  36 *    RefCpyV  v5, 0xba5ebe20          (type:GameObject)
+  182  36 *    RefCpyV  v5, 0xe4f5e6a0          (type:GameObject)
   185  36 *    CALLINTF 858           (void GameObject::set_processingTicks(bool))
-  187  33 *    FREE     v5, 0xba5ebe20          (type:GameObject)
+  187  33 *    FREE     v5, 0xe4f5e6a0          (type:GameObject)
 - 27,3 -
   190  33 *    SUSPEND
-  191  33 *    FREE     v8, 0xba5ea840          (type:SpriteComponent)
+  191  33 *    FREE     v8, 0xe4f5fc80          (type:SpriteComponent)
             0:
-  194  33 *    FREE     v-2, 0xba573a30          (type:Anchor)
-  197  33 *    FREE     v-4, 0xba5ebbf0          (type:Point2F)
+  194  33 *    FREE     v-2, 0xe4eec910          (type:Anchor)
+  197  33 *    FREE     v-4, 0xe4f5e470          (type:Point2F)
   200  33 *    RET      6

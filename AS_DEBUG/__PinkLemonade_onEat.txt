@@ -16,7 +16,7 @@ Variables:
                VarDecl  1
     1  16 *    PshVPtr  v-2
     2  18 *    CALLINTF 832           (GenomeComponent@ GameObject::genome())
-    4  16 *    FREE     v2, 0xba5e5480          (type:GenomeComponent)
+    4  16 *    FREE     v2, 0xe4f52fc0          (type:GenomeComponent)
     7  16 *    STOREOBJ v2
 - 33,3 -
     8  16 *    SUSPEND
@@ -24,7 +24,7 @@ Variables:
    10  16 *    CmpPtr   v2, v4
    12  16 *    TNZ
    13  16 *    CpyRtoV4 v5
-   14  16 *    FREE     v4, 0xba5e5480          (type:GenomeComponent)
+   14  16 *    FREE     v4, 0xe4f52fc0          (type:GenomeComponent)
    17  16 *    CpyVtoR4 v5
    18  16 *    JLowZ    +72              (d:92)
 - 35,4 -
@@ -100,7 +100,7 @@ Variables:
    94  18 *    CALLINTF 859           (void GameObject::destroy())
 - 43,3 -
    96  16 *    SUSPEND
-   97  16 *    FREE     v2, 0xba5e5480          (type:GenomeComponent)
+   97  16 *    FREE     v2, 0xe4f52fc0          (type:GenomeComponent)
             0:
-  100  16 *    FREE     v-2, 0xba5ebe20          (type:GameObject)
+  100  16 *    FREE     v-2, 0xe4f5e6a0          (type:GameObject)
   103  16 *    RET      4

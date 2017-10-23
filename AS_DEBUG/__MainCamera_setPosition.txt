@@ -23,14 +23,14 @@ Variables:
                ObjInfo  v1, 1
     4   7 *    SUSPEND
     5   7 *    PSF      v5
-    6   9 *    ALLOC    0x271ba573c60, 302             (type:Angle, Angle::Angle())
+    6   9 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
    10   7 *    PSF      v1
    11   9 *    PshVPtr  v5
    12  11 *    COPY     v1, 67108882
    14   9 *    PopPtr
    15   7 *    VAR      v5
    16   9 *    PSF      v7
-   17  11 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
+   17  11 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
    21   9 *    PshVPtr  v-4
    22  11 *    PshVPtr  v7
    23  13 *    COPY     v2, 67108906
@@ -45,11 +45,11 @@ Variables:
    34  15 *    GETOBJ   4
    35  15 *    GETOBJ   6
    36  15 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
-   38   7 *    FREE     v3, 0xba5e3c70          (type:MovementComponent)
+   38   7 *    FREE     v3, 0xe4f53ab0          (type:MovementComponent)
 - 11,3 -
    41   7 *    SUSPEND
                ObjInfo  v1, 0
             0:
-   42   7 *    FREE     v-2, 0xba573a30          (type:Anchor)
-   45   7 *    FREE     v-4, 0xba5ebbf0          (type:Point2F)
+   42   7 *    FREE     v-2, 0xe4eec910          (type:Anchor)
+   45   7 *    FREE     v-4, 0xe4f5e470          (type:Point2F)
    48   7 *    RET      6

@@ -25,9 +25,9 @@ Variables:
    12   7 *    Thiscall1 897           (CallButtonBase@& array::opIndex(uint))
    14   4 *    PshRPtr
    15   6 *    RDSPtr
-   16   6 *    RefCpyV  v4, 0xbc2d8450          (type:CallButtonBase)
+   16   6 *    RefCpyV  v4, 0xe4f600e0          (type:CallButtonBase)
    19   6 *    CALLINTF 859           (void GameObject::destroy())
-   21   4 *    FREE     v4, 0xbc2d8450          (type:CallButtonBase)
+   21   4 *    FREE     v4, 0xe4f600e0          (type:CallButtonBase)
 - 61,45 -
             }
             3:
