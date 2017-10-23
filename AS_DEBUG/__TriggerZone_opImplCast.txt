@@ -12,7 +12,7 @@ Variables:
     1   2 *    PshVPtr  v0
     2   4 *    ADDSi    v32, 134217785
     4   4 *    RDSPtr
-    5   4 *    RefCpyV  v2, 0x8cc0e580          (type:TriggerZone_t)
+    5   4 *    RefCpyV  v2, 0xba5eb100          (type:TriggerZone_t)
     8   4 *    PopPtr
             {
             }

@@ -15,10 +15,10 @@ Variables:
 - 99,2 -
     0  14 *    SUSPEND
                VarDecl  0
-    1  14 *    PshGPtr  0x2f88e7e0e88          (i:3266565770888, f:1.6139e-311)
+    1  14 *    PshGPtr  0x271ba579458          (i:2687480861784, f:1.32779e-311)
     4  16 *    CHKREF
     5  16 *    CALLSYS  818           (ParticleEmitterDatablock@ weakref::get() const)
-    7  14 *    FREE     v2, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+    7  14 *    FREE     v2, 0xba5e4760          (type:ParticleEmitterDatablock)
    10  14 *    STOREOBJ v2
 - 101,2 -
    11  14 *    SUSPEND
@@ -26,7 +26,7 @@ Variables:
    13  14 *    CmpPtr   v2, v4
    15  14 *    TNZ
    16  14 *    CpyRtoV4 v5
-   17  14 *    FREE     v4, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   17  14 *    FREE     v4, 0xba5e4760          (type:ParticleEmitterDatablock)
    20  14 *    CpyVtoR4 v5
    21  14 *    JLowZ    +4              (d:27)
 - 102,3 -
@@ -41,16 +41,16 @@ Variables:
    28  14 *    CALLSYS  237           (ParticleEmitterDatablock@ ParticleEmitterDatablock())
    30  14 *    STOREOBJ v4
    31  14 *    PshVPtr  v4
-   32  16 *    RefCpyV  v2, 0x8cc01eb0          (type:ParticleEmitterDatablock)
-   35  16 *    FREE     v4, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   32  16 *    RefCpyV  v2, 0xba5e4760          (type:ParticleEmitterDatablock)
+   35  16 *    FREE     v4, 0xba5e4760          (type:ParticleEmitterDatablock)
    38  16 *    PopPtr
 - 105,2 -
    39  14 *    SUSPEND
    40  14 *    PshVPtr  v2
-   41  16 *    RefCpyV  v4, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   41  16 *    RefCpyV  v4, 0xba5e4760          (type:ParticleEmitterDatablock)
    44  16 *    PopPtr
    45  14 *    VAR      v4
-   46  16 *    PshGPtr  0x2f88e7e0e88          (i:3266565770888, f:1.6139e-311)
+   46  16 *    PshGPtr  0x271ba579458          (i:2687480861784, f:1.32779e-311)
    49  18 *    CHKREF
    50  18 *    GETOBJ   2
    51  18 *    CALLSYS  822           (weakref<ParticleEmitterDatablock>& weakref::opHndlAssign(ParticleEmitterDatablock@))
@@ -154,7 +154,7 @@ Variables:
   183  19 *    CALLSYS  378           (Color::Color(uint))
                ObjInfo  v9, 1
   185  16 *    PSF      v9
-  186  18 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+  186  18 *    ALLOC    0x271ba59b880, 377             (type:Color, Color::Color(const Color&in))
                ObjInfo  v9, 0
   190  14 *    VAR      v11
   191  16 *    PshC4    0x0          (i:0, f:0)
@@ -164,7 +164,7 @@ Variables:
   197  17 *    PshVPtr  v8
   198  19 *    GETOBJ   3
   199  19 *    CALLSYS  216           (bool Gradient::add(float, Color))
-  201  14 *    FREE     v8, 0x8cc01820          (type:Gradient)
+  201  14 *    FREE     v8, 0xba5e4bc0          (type:Gradient)
 - 133,2 -
   204  14 *    SUSPEND
   205  14 *    PSF      v11
@@ -173,7 +173,7 @@ Variables:
   209  19 *    CALLSYS  378           (Color::Color(uint))
                ObjInfo  v9, 1
   211  16 *    PSF      v9
-  212  18 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+  212  18 *    ALLOC    0x271ba59b880, 377             (type:Color, Color::Color(const Color&in))
                ObjInfo  v9, 0
   216  14 *    VAR      v11
   217  16 *    PshC4    0x3f800000          (i:1065353216, f:1)
@@ -183,7 +183,7 @@ Variables:
   223  17 *    PshVPtr  v8
   224  19 *    GETOBJ   3
   225  19 *    CALLSYS  216           (bool Gradient::add(float, Color))
-  227  14 *    FREE     v8, 0x8cc01820          (type:Gradient)
+  227  14 *    FREE     v8, 0xba5e4bc0          (type:Gradient)
 - 135,2 -
   230  14 *    SUSPEND
   231  14 *    CALL     825           (ParticleDatablock@ GetFireDB())

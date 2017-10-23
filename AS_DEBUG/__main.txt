@@ -29,7 +29,7 @@ Variables:
                ObjInfo  v8, 1
     8  32 *    SUSPEND
     9  32 *    PSF      v25
-   10  34 *    ALLOC    0x2f88cc10880, 543             (type:Point2F, Point2F::Point2F())
+   10  34 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
    14  32 *    AllocMem v22, 8
    16  32 *    SetV4    v23, 0x44554000          (i:1146437632, f:853)
    18  32 *    PshListElmnt v22, 0
@@ -43,7 +43,7 @@ Variables:
    29  34 *    PSF      v20
    30  36 *    CALLSYS  546           (void Point2F::$beh1(const int&in) { float, float })
                ObjInfo  v20, 1
-   32  32 *    FREE     v22, 0x8e88e530          (type:)
+   32  32 *    FREE     v22, 0xbc2d8f40          (type:)
    35  32 *    PSF      v20
    36  34 *    PshVPtr  v25
    37  36 *    COPY     v2, 67108906
@@ -52,7 +52,7 @@ Variables:
    40  32 *    VAR      v25
    41  34 *    PSF      v27
    42  36 *    PSF      v8
-   43  38 *    ALLOC    0x2f88cbabd50, 294             (type:Anchor, Anchor::Anchor(const Anchor&in))
+   43  38 *    ALLOC    0x271ba573a30, 294             (type:Anchor, Anchor::Anchor(const Anchor&in))
    47  34 *    VAR      v27
    48  36 *    CALL     802           (MainCamera@ getMainCamera())
    50  36 *    STOREOBJ v18
@@ -60,11 +60,11 @@ Variables:
    52  38 *    GETOBJ   2
    53  38 *    GETOBJ   4
    54  38 *    CALLINTF 880           (void MainCamera::setPosition(Anchor, Point2F))
-   56  32 *    FREE     v18, 0x8cc0f930          (type:MainCamera)
+   56  32 *    FREE     v18, 0xbc2d5f20          (type:MainCamera)
 - 132,2 -
    59  32 *    SUSPEND
    60  32 *    PSF      v30
-   61  34 *    ALLOC    0x2f88cbabf80, 302             (type:Angle, Angle::Angle())
+   61  34 *    ALLOC    0x271ba573c60, 302             (type:Angle, Angle::Angle())
    65  32 *    PSF      v28
    66  34 *    CALLSYS  302           (Angle::Angle())
                ObjInfo  v28, 1
@@ -75,7 +75,7 @@ Variables:
                ObjInfo  v28, 0
    73  32 *    VAR      v30
    74  34 *    PSF      v25
-   75  36 *    ALLOC    0x2f88cc10880, 543             (type:Point2F, Point2F::Point2F())
+   75  36 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
    79  34 *    AllocMem v22, 8
    81  34 *    SetV4    v23, 0x43fa0000          (i:1140457472, f:500)
    83  34 *    PshListElmnt v22, 0
@@ -89,7 +89,7 @@ Variables:
    94  36 *    PSF      v20
    95  38 *    CALLSYS  546           (void Point2F::$beh1(const int&in) { float, float })
                ObjInfo  v20, 1
-   97  34 *    FREE     v22, 0x8e88e530          (type:)
+   97  34 *    FREE     v22, 0xbc2d8f40          (type:)
   100  34 *    PSF      v20
   101  36 *    PshVPtr  v25
   102  38 *    COPY     v2, 67108906
@@ -98,14 +98,14 @@ Variables:
   105  34 *    VAR      v25
   106  36 *    PSF      v27
   107  38 *    PSF      v8
-  108  40 *    ALLOC    0x2f88cbabd50, 294             (type:Anchor, Anchor::Anchor(const Anchor&in))
+  108  40 *    ALLOC    0x271ba573a30, 294             (type:Anchor, Anchor::Anchor(const Anchor&in))
   112  36 *    VAR      v27
   113  38 *    GETOBJ   0
   114  38 *    GETOBJ   2
   115  38 *    GETOBJ   4
   116  38 *    CALL     785           (FireEffect@ FireEffect(Anchor, Point2F, Angle = Angle ( )))
   118  32 *    STOREOBJ v32
-  119  32 *    FREE     v32, 0x8cc0e9e0          (type:FireEffect)
+  119  32 *    FREE     v32, 0xbc2d6150          (type:FireEffect)
 - 145,2 -
   122  32 *    SUSPEND
                ObjInfo  v8, 0

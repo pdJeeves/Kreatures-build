@@ -24,14 +24,14 @@ Variables:
    10   9 *    PshVPtr  v4
    11  11 *    CALLSYS  651           (SpriteComponent@ RenderComponent::opCast())
    13   9 *    STOREOBJ v8
-   14   9 *    FREE     v4, 0x8cc10ab0          (type:RenderComponent)
+   14   9 *    FREE     v4, 0xba5eaca0          (type:RenderComponent)
    17   9 *    JMP      +1              (d:20)
             1:
    19   9 *    ClrVPtr  v8
             2:
    20   9 *    PshVPtr  v8
-   21  11 *    RefCpyV  v2, 0x8cc0f4d0          (type:SpriteComponent)
-   24  11 *    FREE     v8, 0x8cc0f4d0          (type:SpriteComponent)
+   21  11 *    RefCpyV  v2, 0xba5ea840          (type:SpriteComponent)
+   24  11 *    FREE     v8, 0xba5ea840          (type:SpriteComponent)
    27  11 *    PopPtr
 - 20,3 -
    28   9 *    SUSPEND
@@ -40,7 +40,7 @@ Variables:
    32  12 *    CALLSYS  661           (void SpriteComponent::set_frame(int))
 - 21,3 -
    34   9 *    SUSPEND
-   35   9 *    FREE     v2, 0x8cc0f4d0          (type:SpriteComponent)
+   35   9 *    FREE     v2, 0xba5ea840          (type:SpriteComponent)
             0:
-   38   9 *    FREE     v-2, 0x8cc0f2a0          (type:GameObject)
+   38   9 *    FREE     v-2, 0xba5ebe20          (type:GameObject)
    41   9 *    RET      4

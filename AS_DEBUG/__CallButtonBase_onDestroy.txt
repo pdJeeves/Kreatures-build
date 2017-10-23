@@ -12,9 +12,9 @@ Variables:
     1   2 *    PshVPtr  v0
     2   4 *    ADDSi    v40, 134217783
     4   4 *    RDSPtr
-    5   4 *    RefCpyV  v2, 0x8cc101f0          (type:LiftBase)
+    5   4 *    RefCpyV  v2, 0xbc2d9170          (type:LiftBase)
     8   4 *    CALLINTF 859           (void GameObject::destroy())
-   10   2 *    FREE     v2, 0x8cc101f0          (type:LiftBase)
+   10   2 *    FREE     v2, 0xbc2d9170          (type:LiftBase)
 - 22,6 -
    13   2 *    SUSPEND
             0:

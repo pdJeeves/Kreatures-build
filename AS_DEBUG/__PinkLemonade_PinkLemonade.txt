@@ -37,14 +37,14 @@ Variables:
    17  27 *    PshVPtr  v6
    18  29 *    CALLSYS  651           (SpriteComponent@ RenderComponent::opCast())
    20  27 *    STOREOBJ v10
-   21  27 *    FREE     v6, 0x8cc10ab0          (type:RenderComponent)
+   21  27 *    FREE     v6, 0xba5eaca0          (type:RenderComponent)
    24  27 *    JMP      +1              (d:27)
             1:
    26  27 *    ClrVPtr  v10
             2:
    27  27 *    PshVPtr  v10
-   28  29 *    RefCpyV  v4, 0x8cc0f4d0          (type:SpriteComponent)
-   31  29 *    FREE     v10, 0x8cc0f4d0          (type:SpriteComponent)
+   28  29 *    RefCpyV  v4, 0xba5ea840          (type:SpriteComponent)
+   31  29 *    FREE     v10, 0xba5ea840          (type:SpriteComponent)
    34  29 *    PopPtr
 - 10,3 -
    35  27 *    SUSPEND
@@ -74,14 +74,14 @@ Variables:
 - 14,3 -
    64  27 *    SUSPEND
    65  27 *    PSF      v25
-   66  29 *    ALLOC    0x2f88cbabf80, 302             (type:Angle, Angle::Angle())
+   66  29 *    ALLOC    0x271ba573c60, 302             (type:Angle, Angle::Angle())
    70  27 *    PshVPtr  v-6
    71  29 *    PshVPtr  v25
    72  31 *    COPY     v1, 67108882
    74  29 *    PopPtr
    75  27 *    VAR      v25
    76  29 *    PSF      v27
-   77  31 *    ALLOC    0x2f88cc10880, 543             (type:Point2F, Point2F::Point2F())
+   77  31 *    ALLOC    0x271ba5ebbf0, 543             (type:Point2F, Point2F::Point2F())
    81  29 *    PshVPtr  v-4
    82  31 *    PshVPtr  v27
    83  33 *    COPY     v2, 67108906
@@ -96,12 +96,12 @@ Variables:
    94  35 *    GETOBJ   4
    95  35 *    GETOBJ   6
    96  35 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
-   98  27 *    FREE     v23, 0x8cc02770          (type:MovementComponent)
+   98  27 *    FREE     v23, 0xba5e3c70          (type:MovementComponent)
 - 15,3 -
   101  27 *    SUSPEND
-  102  27 *    FREE     v4, 0x8cc0f4d0          (type:SpriteComponent)
+  102  27 *    FREE     v4, 0xba5ea840          (type:SpriteComponent)
             0:
-  105  27 *    FREE     v-2, 0x8cbabd50          (type:Anchor)
-  108  27 *    FREE     v-4, 0x8cc10880          (type:Point2F)
-  111  27 *    FREE     v-6, 0x8cbabf80          (type:Angle)
+  105  27 *    FREE     v-2, 0xba573a30          (type:Anchor)
+  108  27 *    FREE     v-4, 0xba5ebbf0          (type:Point2F)
+  111  27 *    FREE     v-6, 0xba573c60          (type:Angle)
   114  27 *    RET      8

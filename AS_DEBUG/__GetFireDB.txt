@@ -15,10 +15,10 @@ Variables:
 - 51,2 -
     0  15 *    SUSPEND
                VarDecl  0
-    1  15 *    PshGPtr  0x2f88e7e1e58          (i:3266565774936, f:1.6139e-311)
+    1  15 *    PshGPtr  0x271ba5790e8          (i:2687480860904, f:1.32779e-311)
     4  17 *    CHKREF
     5  17 *    CALLSYS  808           (ParticleDatablock@ weakref::get() const)
-    7  15 *    FREE     v2, 0x8cc01c80          (type:ParticleDatablock)
+    7  15 *    FREE     v2, 0xba5e4530          (type:ParticleDatablock)
    10  15 *    STOREOBJ v2
 - 53,2 -
    11  15 *    SUSPEND
@@ -26,7 +26,7 @@ Variables:
    13  15 *    CmpPtr   v2, v4
    15  15 *    TNZ
    16  15 *    CpyRtoV4 v5
-   17  15 *    FREE     v4, 0x8cc01c80          (type:ParticleDatablock)
+   17  15 *    FREE     v4, 0xba5e4530          (type:ParticleDatablock)
    20  15 *    CpyVtoR4 v5
    21  15 *    JLowZ    +4              (d:27)
 - 54,3 -
@@ -41,16 +41,16 @@ Variables:
    28  15 *    CALLSYS  220           (ParticleDatablock@ ParticleDatablock())
    30  15 *    STOREOBJ v4
    31  15 *    PshVPtr  v4
-   32  17 *    RefCpyV  v2, 0x8cc01c80          (type:ParticleDatablock)
-   35  17 *    FREE     v4, 0x8cc01c80          (type:ParticleDatablock)
+   32  17 *    RefCpyV  v2, 0xba5e4530          (type:ParticleDatablock)
+   35  17 *    FREE     v4, 0xba5e4530          (type:ParticleDatablock)
    38  17 *    PopPtr
 - 57,2 -
    39  15 *    SUSPEND
    40  15 *    PshVPtr  v2
-   41  17 *    RefCpyV  v4, 0x8cc01c80          (type:ParticleDatablock)
+   41  17 *    RefCpyV  v4, 0xba5e4530          (type:ParticleDatablock)
    44  17 *    PopPtr
    45  15 *    VAR      v4
-   46  17 *    PshGPtr  0x2f88e7e1e58          (i:3266565774936, f:1.6139e-311)
+   46  17 *    PshGPtr  0x271ba5790e8          (i:2687480860904, f:1.32779e-311)
    49  19 *    CHKREF
    50  19 *    GETOBJ   2
    51  19 *    CALLSYS  812           (weakref<ParticleDatablock>& weakref::opHndlAssign(ParticleDatablock@))
@@ -167,7 +167,7 @@ Variables:
   196  17 *    STOREOBJ v8
   197  17 *    PshVPtr  v8
   198  19 *    CALLSYS  215           (bool Spline::add(float, float))
-  200  15 *    FREE     v8, 0x8cc02bd0          (type:Spline)
+  200  15 *    FREE     v8, 0xba5e3ea0          (type:Spline)
 - 86,2 -
   203  15 *    SUSPEND
   204  15 *    PshC4    0x3f800000          (i:1065353216, f:1)
@@ -177,7 +177,7 @@ Variables:
   211  17 *    STOREOBJ v8
   212  17 *    PshVPtr  v8
   213  19 *    CALLSYS  215           (bool Spline::add(float, float))
-  215  15 *    FREE     v8, 0x8cc02bd0          (type:Spline)
+  215  15 *    FREE     v8, 0xba5e3ea0          (type:Spline)
 - 88,2 -
   218  15 *    SUSPEND
   219  15 *    PSF      v15
@@ -186,7 +186,7 @@ Variables:
   223  20 *    CALLSYS  378           (Color::Color(uint))
                ObjInfo  v13, 1
   225  17 *    PSF      v13
-  226  19 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+  226  19 *    ALLOC    0x271ba59b880, 377             (type:Color, Color::Color(const Color&in))
                ObjInfo  v13, 0
   230  15 *    VAR      v15
   231  17 *    PshC4    0x0          (i:0, f:0)
@@ -196,7 +196,7 @@ Variables:
   237  18 *    PshVPtr  v12
   238  20 *    GETOBJ   3
   239  20 *    CALLSYS  216           (bool Gradient::add(float, Color))
-  241  15 *    FREE     v12, 0x8cc01820          (type:Gradient)
+  241  15 *    FREE     v12, 0xba5e4bc0          (type:Gradient)
 - 89,2 -
   244  15 *    SUSPEND
   245  15 *    PSF      v15
@@ -205,7 +205,7 @@ Variables:
   249  20 *    CALLSYS  378           (Color::Color(uint))
                ObjInfo  v13, 1
   251  17 *    PSF      v13
-  252  19 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+  252  19 *    ALLOC    0x271ba59b880, 377             (type:Color, Color::Color(const Color&in))
                ObjInfo  v13, 0
   256  15 *    VAR      v15
   257  17 *    PshC4    0x3f800000          (i:1065353216, f:1)
@@ -215,7 +215,7 @@ Variables:
   263  18 *    PshVPtr  v12
   264  20 *    GETOBJ   3
   265  20 *    CALLSYS  216           (bool Gradient::add(float, Color))
-  267  15 *    FREE     v12, 0x8cc01820          (type:Gradient)
+  267  15 *    FREE     v12, 0xba5e4bc0          (type:Gradient)
 - 91,2 -
   270  15 *    SUSPEND
   271  15 *    PSF      v15
@@ -224,7 +224,7 @@ Variables:
   275  20 *    CALLSYS  378           (Color::Color(uint))
                ObjInfo  v13, 1
   277  17 *    PSF      v13
-  278  19 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+  278  19 *    ALLOC    0x271ba59b880, 377             (type:Color, Color::Color(const Color&in))
                ObjInfo  v13, 0
   282  15 *    VAR      v15
   283  17 *    PshC4    0x0          (i:0, f:0)
@@ -234,7 +234,7 @@ Variables:
   289  18 *    PshVPtr  v12
   290  20 *    GETOBJ   3
   291  20 *    CALLSYS  216           (bool Gradient::add(float, Color))
-  293  15 *    FREE     v12, 0x8cc01820          (type:Gradient)
+  293  15 *    FREE     v12, 0xba5e4bc0          (type:Gradient)
 - 92,2 -
   296  15 *    SUSPEND
   297  15 *    PSF      v15
@@ -243,7 +243,7 @@ Variables:
   301  20 *    CALLSYS  378           (Color::Color(uint))
                ObjInfo  v13, 1
   303  17 *    PSF      v13
-  304  19 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+  304  19 *    ALLOC    0x271ba59b880, 377             (type:Color, Color::Color(const Color&in))
                ObjInfo  v13, 0
   308  15 *    VAR      v15
   309  17 *    PshC4    0x3f800000          (i:1065353216, f:1)
@@ -253,7 +253,7 @@ Variables:
   315  18 *    PshVPtr  v12
   316  20 *    GETOBJ   3
   317  20 *    CALLSYS  216           (bool Gradient::add(float, Color))
-  319  15 *    FREE     v12, 0x8cc01820          (type:Gradient)
+  319  15 *    FREE     v12, 0xba5e4bc0          (type:Gradient)
 - 94,2 -
   322  15 *    SUSPEND
             {

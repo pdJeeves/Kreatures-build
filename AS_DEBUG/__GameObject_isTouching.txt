@@ -14,7 +14,7 @@ Variables:
     1   3 *    PshVPtr  v-2
     2   5 *    ADDSi    v32, 134217784
     4   5 *    RDSPtr
-    5   5 *    RefCpyV  v2, 0x8cbad9d0          (type:GameObject_t)
+    5   5 *    RefCpyV  v2, 0xba58ce40          (type:GameObject_t)
     8   5 *    PopPtr
     9   3 *    VAR      v2
    10   5 *    PshVPtr  v0
@@ -27,5 +27,5 @@ Variables:
             }
    18   3 *    CpyVtoR4 v3
             0:
-   19   3 *    FREE     v-2, 0x8cc0f2a0          (type:GameObject)
+   19   3 *    FREE     v-2, 0xba5ebe20          (type:GameObject)
    22   3 *    RET      4

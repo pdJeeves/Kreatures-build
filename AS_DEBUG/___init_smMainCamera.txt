@@ -11,8 +11,8 @@ Variables:
     1   2 *    CALL     768           (Engine::MainCamera@ MainCamera())
     3   2 *    STOREOBJ v2
     4   2 *    PshVPtr  v2
-    5   4 *    PGA      0x2f88e7e12a8          (i:3266565771944, f:1.6139e-311)
-    8   6 *    REFCPY   0x2f88cc0f930          (i:3266536601904, f:1.61388e-311)
+    5   4 *    PGA      0x271ba579be8          (i:2687480863720, f:1.32779e-311)
+    8   6 *    REFCPY   0x271bc2d5f20          (i:2687511650080, f:1.32781e-311)
    11   4 *    PopPtr
-   12   2 *    FREE     v2, 0x8cc0f930          (type:MainCamera)
+   12   2 *    FREE     v2, 0xbc2d5f20          (type:MainCamera)
    15   2 *    RET      0

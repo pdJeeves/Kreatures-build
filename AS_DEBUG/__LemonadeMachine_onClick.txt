@@ -14,7 +14,7 @@ Variables:
                VarDecl  1
     0   2 *    SUSPEND
     1   2 *    PshVPtr  v-2
-    2   4 *    RefCpyV  v2, 0x8cc0f2a0          (type:GameObject)
+    2   4 *    RefCpyV  v2, 0xba5ebe20          (type:GameObject)
     5   4 *    PopPtr
     6   2 *    VAR      v2
     7   4 *    PshVPtr  v0
@@ -23,6 +23,6 @@ Variables:
 - 72,3 -
    11   2 *    SUSPEND
             0:
-   12   2 *    FREE     v-2, 0x8cc0f2a0          (type:GameObject)
-   15   2 *    FREE     v-4, 0x8cc10880          (type:Point2F)
+   12   2 *    FREE     v-2, 0xba5ebe20          (type:GameObject)
+   15   2 *    FREE     v-4, 0xba5ebbf0          (type:Point2F)
    18   2 *    RET      6
