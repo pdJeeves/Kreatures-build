@@ -1,0 +1,715 @@
+/+ start by declaring lobes, position and color are only used for rendering +/
+
+/+ sv variable types 
+
+    each variable type has several slots for numbers, 
+    
+    /+ read / write variables +/
+    eax      -> all SV commands write to this variable, it's value is what gets used by small commands like reward/input/signal rules.  Set to 0 at the start of each rule.
+    
+    lobe     -> variables that are shared between neurons, and are preserved over time
+    register -> variables that are shared between neurons, and set to 0 each tick, faster than lobe variables
+    neuron   -> neuron variables, preserved over time, local to a neuron, if these are never used they don't take up space in memory.
+    
+    /+ read only variables +/
+    arg      -> this is what the neuron got from the game engine
+    sum      -> this is the sum of all dendrites in the given slot of a neuron.
+    and      -> if any dendrite has a value of 0 then this is 0, otherwise it is 1
+    sig      -> this is the weighted average of the signals being recieved by dendrites
++/
+
+//-----------------------
+// Unused Lobes
+//-----------------------
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "detail");
+    position = { 0, 40 },
+    size     = { 1, 16 },
+    color    = { 203, 241, 218 },
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "situation");
+    position = { 3, 40 },
+    size     = { 1, 16 },
+    color    = { 219, 157, 128 },
+}
+
+//------------------------
+// Uninplemented Lobes
+//-----------------------
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "mood");
+    position = { 20, 72 },
+    size     = { 1, 1 },
+    color    = { 0, 255, 0 },
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "friend or foe");
+    position = { 5, 64 },
+    size     = { 12, 3 },
+    color    = { 255, 0, 0 },
+}
+
+//-----------------------
+// Language Lobes
+//-----------------------
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "noun");
+    position = { 0, 0 },
+    size     = { 40, 1 },
+    color    = { 255, 223, 245 },
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "verb");
+    position = { 0, 22 },
+    size     = { 1, 13 },
+    color    = { 250, 255, 218 },
+}
+
+/+ declare axons, tracts connect to axons, not lobes. +/
+
+//-----------------------
+// Axons
+//-----------------------
+
+gene : axon
+{
+    id       = catalogue("lobe names", "noun");
+    slot     = 0,
+//arg is whatever the lobe got from the game engine
+    input    = { MOVE arg eax },
+    
+    inputGain   = .6371,
+    leakageRate = .9536,
+    stateNoise  = .121
+    
+/+  state = state * .9536 + arg0 * .6371 
+    if(state > threshold)
+        state = state + random[0, 121) 
+
+    threshold is 0 if not specified.
++/
+
+}
+
+gene : axon
+{
+    id       = catalogue("lobe names", "verb");
+    slot     = 0,
+    input    = { MOVE arg eax },
+    
+    inputGain   = .6371,
+    leakageRate = .9536,
+    stateNoise  = .121
+    threshold   = .04,
+}
+
+//--------------------------
+// Vision & Smell
+//---------------------------
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "smell");
+    position = { 3, 4 },
+    size     = { 40, 1 },
+    color    = { 255, 207, 222 },
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "vision");
+    position = { 6, 8 },
+    size     = { 40, 1 },
+    color    = { 70, 96, 252 },
+}	
+
+//-----------------------
+// Axons
+//-----------------------
+
+gene : axon
+{
+    id       = catalogue("lobe names", "smell");
+    slot     = 0;
+    input    = { MOVE arg eax };
+    
+    threshold = 0,
+    nominal   = .3347
+    gain      = .6653
+    
+/+ equivalent to 
+    if(state == 0)
+        output = 0
+    else
+        output = state * .6653 + .3347
+    
+    [based on smell->stim tract]
++/
+}
+
+gene : axon
+{
+    id       = catalogue("lobe names", "vision");
+    slot     = 0;
+//input is always the absolute value of it's command 
+    input    = { MOVE arg eax };
+    input    = { arg0 }
+    
+//so if arg is > 0, then output is the 1 - |arg|, otherwise it's 0
+    threshold = 0,
+    nominal   = 1.0
+    gain      = 1.0
+    invert    = true
+}
+
+//slot 1 of the vision lobe is movement
+gene : axon
+{
+    id       = catalogue("lobe names", "vision");
+    slot     = 1;
+    
+    input    = { MUL arg .5 },
+//use the distance from the calculated input value to the last calculated value, instead of the raw value    
+    delta    = true,
+    
+    inputGain   = .9355,
+    leakageRate = .9645
+}
+
+//-----------------------
+// Stimuli Lobe
+//-----------------------
+
+// Tracts
+
+//smell -> stim
+gene : tract {
+    originLobe = { slot = 0, id = catalogue("lobe names", "stimuli") },
+    dataSource = { slot = 0, id = catalogue("lobe names", "vision")  },
+    flatConnect = true,
+    
+//the default values added when we convert this to a .gen file will make it just copy values directly.
+
+//divide the input by 2 before propagating it
+    ltw.min = .5,
+    ltw.max = .5,
+
+}
+
+//visn -> stim
+gene : tract {
+    originLobe = { slot = 1, id = catalogue("lobe names", "stimuli") },
+    dataSource = { slot = 0, id = catalogue("lobe names", "vision")  },
+    flatConnect = true,
+    
+    ltw.min = .5,
+    ltw.max = .5,
+}
+
+//move -> stim
+gene : tract {
+    originLobe = { slot = 2, id = catalogue("lobe names", "stimuli") },
+    dataSource = { slot = 1, id = catalogue("lobe names", "vision")  },
+    flatConnect = true,
+    
+//value taken from the C3 movie->stim tract
+    ltw.min = .125,
+    ltw.max = .125,
+}
+
+gene : tract {
+    originLobe = { slot = 3,  id = catalogue("lobe names", "stimuli") },
+    dataSource = { slot = 0, id = catalogue("lobe names", "noun")     }
+    flatConnect = true,
+    
+//value taken from the C3 noun->stim tract, it would appear that this was originally intended to be .375, but later changed to .8427 to make the norns more obedient. 
+    ltw.min = .375,
+    ltw.max = .375,
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "stimuli");
+    position = { 5, 17 },
+    size     = { 40, 1 },
+    color    = { 213, 200, 255 },
+}
+
+//Axons
+
+gene : axon
+{
+    id = catalogue("lobe names", "stimuli");
+    slot = 0,
+    input = { sum0 MAX sum1 ADD type2 ADD TRUE type3 0 }
+    
+//state and output are just copies of input.
+}
+
+//-----------------------
+// Drive Lobe
+//-----------------------
+
+// add all receptors needed
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 0,
+    locus = 0,
+    
+    chemical = "pain",
+    
+//these are just the default values
+/+
+    threshold = 0,
+    nominal   = 0,
+    gain      = 1.0,
+    invert    = false,
+    digital  = false,
++/ 
+}
+
+//neuro receptor loci are shared across the whole lobe, so cell refers to when the loci gets processed
+//later values overwrite earlier values.
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 1,
+    locus = 0,
+    
+    chemical = "hunger for protein",
+}
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 2,
+    locus = 0,
+    
+    chemical = "hunger for starch",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 3,
+    locus = 0,
+    
+    chemical = "hunger for fat",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 4,
+    locus = 0,
+    
+    chemical = "cold",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 5,
+    locus = 0,
+    
+    chemical = "hot",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 6,
+    locus = 0,
+    
+    chemical = "tired",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 7,
+    locus = 0,
+    
+    chemical = "sleepy",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 8,
+    locus = 0,
+    
+    chemical = "lonely",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 9,
+    locus = 0,
+    
+    chemical = "crowded",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 10,
+    locus = 0,
+    
+    chemical = "scared",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 11,
+    locus = 0,
+    
+    chemical = "bored",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 12,
+    locus = 0,
+    
+    chemical = "angry",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 13,
+    locus = 0,
+    
+    chemical = "friendly",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 14,
+    locus = 0,
+    
+    chemical = "homesick",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 15,
+    locus = 0,
+    
+    chemical = "low down",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 16,
+    locus = 0,
+    
+    chemical = "hight up",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 17,
+    locus = 0,
+    
+    chemical = "exit",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 18,
+    locus = 0,
+    
+    chemical = "need to enter",
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 19,
+    locus = 0,
+    
+    chemical = "wait",
+}
+
+// Inhibitory Tracts
+
+gene : tract
+{
+//other drives
+    originLobe = { slot = 0, id = catalogue("lobe names", "drive"), first = 1, last = 15 },
+//nav drives
+    dataSource = { slot = 0, id = catalogue("lobe names", "drive"), first = 15, last = 18, maxSynapses = 15 },
+    flatConnect = true,
+}
+
+gene : tract
+{
+//other drives
+    originLobe = { slot = 1, id = catalogue("lobe names", "drive"), first = 0, last = 18 },
+//wait drive
+    dataSource = { slot = 0, id = catalogue("lobe names", "drive"), first = 19, last = 19, maxSynapses = 19 },
+    flatConnect = true,
+}
+
+gene : tract
+{
+    originLobe = { slot = 2, id = catalogue("lobe names", "drive") },
+//functionially, slot 1 of drive = response
+    dataSource = { slot = 1, id = catalogue("lobe names", "drive") },
+    flatConnect = true,
+}
+
+gene : tract
+{
+    originLobe = { slot = 3, id = catalogue("lobe names", "drive") },
+    dataSource = { slot = 0, id = catalogue("lobe names", "decsn"), first = 11, last = 13, maxSynapses = 20 },
+    flatConnect = true,
+}
+
+//Lobe
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "drive");
+    position = { 30, 55 },
+    size     = { 20, 1 },
+    color    = { 210, 233, 118 }
+}
+
+
+gene : axon
+{
+    id  = catalogue("lobe names", "drive");
+    slot = 0
+    
+//input = drive level
+    input  = { sum0 max sum1 minus .1 max sum3 le 0 times chem 0 }
+
+//when outputting increase NGF by this much
+    ngfGainRate     = 1.0,
+    ngfReuptakeRate = .64,
+}
+
+//functionally this is the response lobe
+gene : axon
+{
+    id  = catalogue("lobe names", "drive");
+    slot = 1
+    
+//input = how much it's changed
+    input  = { MOVE chem0 eax }
+    delta  = true
+    
+//store the delta, but give it a bit of time to build
+    inputGain   = .275
+    leakageRate = .825
+
+//when outputting increase NGF by this much
+    ngfGainRate     = 1.0,
+    ngfReuptakeRate = .64,
+}
+
+
+//--------------------------
+// Combination
+//--------------------------
+
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "combination"),
+    cell = 0,
+    locus = 0,
+    
+    chemical = "Punishment",
+    
+    threshold = .1008,
+    nominal = 0,
+    gain = .7016
+}
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 0,
+    locus = 1,
+    
+    chemical = "Reward",
+    
+    threshold = .1008,
+    nominal = 0,
+    gain = .7016
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 0,
+    locus = 2,
+    
+    chemical = "pre-REM",    
+}
+
+gene : neuroreceptor 
+{
+    lobe = catalogue("lobe names", "drive"),
+    cell = 0,
+    locus = 3,
+    
+    chemical = "REM",
+}
+
+gene : tract {
+    originLobe = { slot = 0, id = catalogue("lobe names", "combination"), maxSynapses = 1 },
+    dataSource = { slot = 0, id = catalogue("lobe names", "verb"), maxSynapses = 40 },
+    flatConnect = true,
+    
+    ltw.min = .5,
+    ltw.max = .5
+}
+
+gene : tract {
+    originLobe = { slot = 1, id = catalogue("lobe names", "combination"), maxSynapses = 1 },
+    dataSource = { slot = 0, id = catalogue("lobe names", "stim"), maxSynapses = 11 },
+    flatConnect = true,
+//connect by column instead of by row
+    columnOriented = true,
+    
+    ltw.min = .3308,
+    ltw.max = .3308
+}
+
+
+gene : tract {
+    originLobe = { slot = 2, id = catalogue("lobe names", "combination"), maxSynapses = 3 },
+    dataSource = { slot = 0, id = catalogue("lobe names", "drive"), maxSynapses = 40 },
+    
+    reward = { SUB chem1 chem0 }
+    
+    ltw.min = .32,
+    ltw.max = .64,
+    
+    add.min = 1,
+    add.max = 3,
+    
+    susceptGain = .2661
+    susceptLoss = .8024
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "combination");
+    position = { 5, 22 },
+    size     = { 40, 11 },
+    color    = { 255, 222, 203 },
+    
+//most of the SV rule seems to have to do with processing dreams
+    update = 
+    {
+        ADD sum0 sum2
+        MUL eax sum1
+        MOVE eax register0
+    };
+}
+
+gene : axon
+{
+    id       = catalogue("lobe names", "combination");
+    slot    = 0;
+    
+    input = { sum0 ADD sum2 MUL sum1  };
+    inputGain   = .8145,
+    leakageRate = .1855,
+    
+    'winner take all' = true;
+}
+
+
+//declare the lobe itself.
+
+
+//-----------------------
+// Output 
+//-----------------------
+
+// Tracts
+
+//comb -> decision
+gene : tract {
+//each neuron connects to 40 cells in the target lobe
+    originLobe = { slot = 0, id = catalogue("lobe names", "decision"), maxSynapses = 40 },
+    dataSource = { slot = 0, id = catalogue("lobe names", "combination"), maxSynapses = 1 },
+    flatConnect = true,
+}
+
+//comb -> attention
+gene : tract {
+//each neuron connects to 11 cells in the target lobe
+    originLobe = { slot = 0, id = catalogue("lobe names", "attention"), maxSynapses = 11 },
+    dataSource = { slot = 0, id = catalogue("lobe names", "combination"), maxSynapses = 1 },
+    flatConnect = true,
+//connect by column instead of by row
+    columnOriented = true,
+}
+
+//Lobes
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "decision");
+    position = { 50, 22 },
+    size     = { 1, 13 },
+    color    = { 230, 217, 198 },
+}
+
+gene : lobe
+{
+    id       = catalogue("lobe names", "attention");
+    position = { 5, 75 },
+    size     = { 40, 1 },
+    color    = { 240, 198, 0 },
+}
+
+//Output
+
+gene : axon
+{
+    id       = catalogue("lobe names", "decision");
+//this is the 0th axon, there are up to 4 slots, if two axons share a slot the values of their genes are averaged. 
+    slot     = 0;
+//use the sum of the lobe's type 0 dendrites as our input
+    input    = { sum0 };
+    'winner take all' = true;
+}
+
+gene : axon
+{
+    id       = catalogue("lobe names", "attention");
+    slot     = 0;
+    input    = { sum0 };
+    'winner take all' = true;
+}

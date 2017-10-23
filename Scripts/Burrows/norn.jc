@@ -1,0 +1,295 @@
+/* norn testing script, tests using coroutines as state machines */
+import all;
+
+class Norn extends GameObject 
+{
+	cofunction float DescisionScript(Norn _this){}
+	private DescisionScript curScript;
+	private int priorDecision;
+	private Timer timer;
+	
+	method Norn(const Anchor location, const Point2F offset) extends GameObject()
+	{
+		mouseable(1);
+		catagory(Catagory::Creature);
+	
+		genome().load("Eggs/ron.egg");
+		genome().setSelected();
+		genome().paused = true;
+			
+		movement().setPosition(location, offset, null);
+	
+		physics().elasticity = 0;
+		physics().friction = .5;
+		
+		physics().respondToPhysicalZones(1); 
+		processingTicks(true);
+		
+		curScript = null;
+		priorDecision = 0;
+		timer = new Timer(this, resumeDecision, 0);
+		timer.singleShot = false;
+		
+	//	sprite().frame = 12;
+		sprite().setAnimation("normal", 0, -1);
+	}
+	
+	method initialize(Builder self)	
+	{
+		self.addGenome(1);
+		self.addRender(4);
+		self.addCollision(Standard);
+		self.addPhysics(Standard);
+		self.addMovement(Standard);
+		
+		self.registerScript(Script::DecisionScript, makeDecision);
+	}
+	
+	private method DescisionScript getDescision(int desc) {
+		switch(desc) {
+		case 1:		return new onPush(this);
+		case 2:		return new onPull(this);
+		case 3:		return new onDeactivate(this);
+		case 4:		return new onApproach(this);
+		case 5:		return new onRetreat(this);
+		case 6:		return new onPickup(this);
+		case 7:		return new onDrop(this);
+		case 8:		return new onNeed(this);
+		case 9:		return new onRest(this);
+		case 10:	return new onWest(this);
+		case 11:	return new onEast(this);
+		case 12:	return new onEat(this);
+		case 13:	return new onHit(this);
+		default:	return new onQuiescent(this);
+	}}
+	
+	private method makeDecision(int desc)
+	{		
+		if(this.genome().zombie == true)
+		{
+			timer.stop();
+			return;
+		}
+
+		curScript = getDescision(desc);
+		
+		resumeDecision();
+		timer.start();
+	}
+	
+	method resumeDecision()
+	{		
+		if(curScript != null)
+		{
+			float delay = curScript();
+			
+			if(delay > 0)
+			{
+				timer.duration = delay;
+			
+				if(timer.duration == 0)
+				{
+					curScript = null;
+				}
+			}
+			else
+			{
+				makeDecision(priorDecision);
+			}
+		}
+	}
+		
+	cofunction float onPickup(Norn _this){}
+	cofunction float onDrop(Norn _this){}
+	cofunction float onNeed(Norn _this){}
+	cofunction float onRest(Norn _this){}
+	cofunction float onEat(Norn _this){}
+	cofunction float onHit(Norn _this) {}
+	
+	cofunction float onQuiescent(Norn _this)
+	{		
+		if((math::random() & 3) == 0)
+		{
+			_this.sprite().frame = 57;
+			yield 1 + (math::random() % 100) / 100.0;
+		}
+		else
+		{
+			_this.sprite().frame = 59;
+			yield (math::random() % 50) / 100.0 + .50;
+			_this.sprite().frame = 60;
+			yield (math::random() % 50) / 100.0 + .50;	
+		}
+		
+		_this.stimulate(_this, 12, 1);
+		yield 0;
+	}
+
+	cofunction float onApproach(Norn _this)
+	{
+		_this.genome().approach(_this, _this.resumeDecision);
+		yield -1;
+	
+		if(_this.genome().withinReach(_this.genome().attention()))
+		{
+			_this.stimulate(_this, 0, 1);
+		}
+		
+		yield .5;
+		yield  0;
+	}
+		
+
+	cofunction float onRetreat(Norn _this)
+	{
+		int gait = 0;
+	
+		gait = 1;
+		if(_this.genome().drive(10) > .25)
+		{
+			gait = 1;
+		}
+		else if(_this.genome().drive(0) > .5)
+		{
+			gait = 2;
+		}
+		else if(_this.genome().drive(9) > .25)
+		{
+			gait = 3;
+		}
+		else
+		{
+			gait = math::random() % 3 + 1;
+		}
+	
+		_this.sprite().frame = 39;
+		yield .35;
+	
+		switch(gait)
+		{
+		case 1:
+			_this.sprite().animate({53, 54, 55, 56}, 1.0, -1);
+			yield 4;
+			break;
+		case 2:
+			_this.sprite().animate({52, 51, 50, 49}, 1.0, -1);
+			yield 2;
+			break;
+		case 3:
+			_this.sprite().animate({49, 50, 51, 52}, 1.0, -1);
+			yield 2;
+			break;
+		}
+	
+		_this.stimulate(_this, 17, 1);
+		yield 1;
+		yield 0;
+	}
+	cofunction float onWest(Norn _this)
+	{
+		_this.sprite().frame = 59;
+		_this.genome().direction = 3;
+		_this.genome().walk();
+		yield 1.5;
+		while(true)
+		{
+			_this.stimulate(_this, 23, 1);
+			yield 1;
+		}	
+	}
+	
+	cofunction float onEast(Norn _this)
+	{
+		_this.sprite().frame = 60;
+		_this.genome().direction = 2;
+		_this.genome().walk();
+		yield 1.5;
+		while(true)
+		{
+			_this.stimulate(_this, 23, 1);
+			yield 1;
+		}	
+	}
+	
+	cofunction float onPush(Norn _this)
+	{
+		_this.genome().approach(_this, _this.resumeDecision);
+		yield -1;
+		
+		if(_this.genome().attention() == null) { yield .5; yield 0; }
+		
+		_this.genome().touch(_this, _this.resumeDecision);
+				
+		if(_this.genome().attention() == null) { yield .5; yield 0; }
+		
+		if(!_this.genome().attention().pushable
+		|| !_this.isTouching(_this.genome().attention()))
+		{
+			_this.stimulate(_this, 0, 1);
+			_this.sprite().frame = (math::random() % 4 == 1)? 39 : 45;
+		}
+		else
+		{
+			_this.stimulate(_this, 13, _this.genome().attention().call(Script::Activate1, _this));
+			_this.sprite().frame = 12;
+		}
+		
+		yield 1;
+		yield 0;	
+	}
+	
+	cofunction float onPull(Norn _this)
+	{
+		_this.genome().approach(_this, _this.resumeDecision);
+		yield -1;
+		
+		if(_this.genome().attention() == null) { yield .5; yield 0; }
+		
+		_this.genome().touch(_this, _this.resumeDecision);
+				
+		if(_this.genome().attention() == null) { yield .5; yield 0; }
+		
+		if(!_this.genome().attention().pullable 
+		|| !_this.isTouching(_this.genome().attention()))
+		{
+			_this.stimulate(_this, 0, 1);
+			_this.sprite().frame = (math::random() % 4 == 1)? 39 : 45;
+		}
+		else
+		{
+			_this.genome().attention().call(Script::Activate2, _this);
+			_this.sprite().frame = 12;
+		}
+		
+		yield 1;
+		yield 0;	
+	}
+	
+	cofunction float onDeactivate(Norn _this)
+	{
+		_this.genome().approach(_this, _this.resumeDecision);
+		yield -1;
+		
+		if(_this.genome().attention() == null) { yield .5; yield 0; }
+		
+		_this.genome().touch(_this, _this.resumeDecision);
+				
+		if(_this.genome().attention() == null) { yield .5; yield 0; }
+		
+		if(!_this.genome().attention().deactivatable 
+		|| !_this.isTouching(_this.genome().attention()))
+		{
+			_this.stimulate(_this, 0, 1);
+			_this.sprite().frame = (math::random() % 4 == 1)? 39 : 45;
+		}
+		else
+		{
+			_this.stimulate(_this, 15, _this.genome().attention().call(Script::Deactivate, _this));
+			_this.sprite().frame = 12;
+		}
+		
+		yield 1;
+		yield 0;	
+	}
+}
+

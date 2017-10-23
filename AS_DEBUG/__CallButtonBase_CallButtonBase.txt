@@ -1,0 +1,82 @@
+CallButtonBase::CallButtonBase(LiftBase@, Anchor, Point2F, Angle = Angle ( ))
+
+Temps: 2, 3, 5, 6, 8, 10, 12
+
+Variables: 
+ -002: LiftBase@ lift
+ -004: Anchor anchor
+ -006: Point2F offset
+ -008: Angle angle
+ 000: CallButtonBase this
+ 005: (heap) GameObject {noname}
+ 008: (heap) MovementComponent {noname}
+ 010: (heap) Angle {noname}
+ 012: (heap) Point2F {noname}
+
+
+- 10,9 -
+               VarDecl  0
+               VarDecl  1
+               VarDecl  2
+               VarDecl  3
+    0  12 *    SUSPEND
+    1  12 *    PshC8    0x440          (i:1088, f:5.37543e-321)
+    4  14 *    PshVPtr  v0
+    5  16 *    CALL     707           (GameObject::GameObject(uint64))
+- 11,9 -
+    7  12 *    SUSPEND
+    8  12 *    SetV1    v3, 0x1
+   10  12 *    PshV4    v3
+   11  13 *    PshVPtr  v0
+   12  15 *    RefCpyV  v5, 0x8cc0f2a0          (type:GameObject)
+   15  15 *    CALLINTF 843           (void GameObject::set_canClick(bool))
+   17  12 *    FREE     v5, 0x8cc0f2a0          (type:GameObject)
+- 13,9 -
+   20  12 *    SUSPEND
+   21  12 *    PshC4    0x16          (i:22, f:3.08286e-44)
+   23  13 *    PshVPtr  v0
+   24  15 *    RefCpyV  v5, 0x8cc0f2a0          (type:GameObject)
+   27  15 *    CALLINTF 841           (void GameObject::set_catagory(Catagory))
+   29  12 *    FREE     v5, 0x8cc0f2a0          (type:GameObject)
+- 15,9 -
+   32  12 *    SUSPEND
+   33  12 *    VAR      v-2
+   34  14 *    PshVPtr  v0
+   35  16 *    ADDSi    v40, 134217783
+   37  16 *    GETOBJREF 2
+   38  16 *    REFCPY   0x2f88cc101f0          (i:3266536604144, f:1.61388e-311)
+   41  14 *    PopPtr
+- 16,9 -
+   42  12 *    SUSPEND
+   43  12 *    PSF      v10
+   44  14 *    ALLOC    0x2f88cbabf80, 302             (type:Angle, Angle::Angle())
+   48  12 *    PshVPtr  v-8
+   49  14 *    PshVPtr  v10
+   50  16 *    COPY     v1, 67108882
+   52  14 *    PopPtr
+   53  12 *    VAR      v10
+   54  14 *    PSF      v12
+   55  16 *    ALLOC    0x2f88cc10880, 543             (type:Point2F, Point2F::Point2F())
+   59  14 *    PshVPtr  v-6
+   60  16 *    PshVPtr  v12
+   61  18 *    COPY     v2, 67108906
+   63  16 *    PopPtr
+   64  14 *    VAR      v12
+   65  16 *    VAR      v-4
+   66  18 *    PshVPtr  v0
+   67  20 *    CALLINTF 830           (MovementComponent@ GameObject::movement())
+   69  18 *    STOREOBJ v8
+   70  18 *    PshVPtr  v8
+   71  20 *    GETOBJREF 2
+   72  20 *    GETOBJ   4
+   73  20 *    GETOBJ   6
+   74  20 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
+   76  12 *    FREE     v8, 0x8cc02770          (type:MovementComponent)
+- 17,6 -
+   79  12 *    SUSPEND
+            0:
+   80  12 *    FREE     v-2, 0x8cc101f0          (type:LiftBase)
+   83  12 *    FREE     v-4, 0x8cbabd50          (type:Anchor)
+   86  12 *    FREE     v-6, 0x8cc10880          (type:Point2F)
+   89  12 *    FREE     v-8, 0x8cbabf80          (type:Angle)
+   92  12 *    RET      10

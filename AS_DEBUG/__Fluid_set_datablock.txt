@@ -1,0 +1,27 @@
+void Fluid::set_datablock(FluidDatablock@)
+
+Temps: 2
+
+Variables: 
+ -002: FluidDatablock@ v
+ 000: Fluid this
+ 002: (heap) FluidDatablock {noname}
+
+
+- 1,461 -
+               VarDecl  0
+    0   2 *    SUSPEND
+    1   2 *    PshVPtr  v-2
+    2   4 *    RefCpyV  v2, 0x8cc02e00          (type:FluidDatablock)
+    5   4 *    PopPtr
+    6   2 *    VAR      v2
+    7   4 *    PshVPtr  v0
+    8   6 *    ADDSi    v40, 134217786
+   10   6 *    RDSPtr
+   11   6 *    GETOBJ   2
+   12   6 *    CALLSYS  435           (void Fluid_t::set_datablock(FluidDatablock@))
+- 1,488 -
+   14   2 *    SUSPEND
+            0:
+   15   2 *    FREE     v-2, 0x8cc02e00          (type:FluidDatablock)
+   18   2 *    RET      4

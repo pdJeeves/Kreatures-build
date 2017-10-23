@@ -1,0 +1,22 @@
+void Fluid::set_drawOrder(int)
+
+Temps: 
+
+Variables: 
+ -002: int v
+ 000: Fluid this
+
+
+- 1,205 -
+               VarDecl  0
+    0   0 *    SUSPEND
+    1   0 *    PshVPtr  v0
+    2   2 *    ADDSi    v40, 134217786
+    4   2 *    RDSPtr
+    5   2 *    ADDSi    v56, 67108893
+    7   2 *    PopRPtr
+    8   0 *    WRTV4    v-2
+- 1,229 -
+    9   0 *    SUSPEND
+            0:
+   10   0 *    RET      3

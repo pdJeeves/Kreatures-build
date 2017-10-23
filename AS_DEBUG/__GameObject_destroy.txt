@@ -1,0 +1,18 @@
+void GameObject::destroy()
+
+Temps: 
+
+Variables: 
+ 000: GameObject this
+
+
+- 1,2225 -
+    0   0 *    SUSPEND
+    1   0 *    PshVPtr  v0
+    2   2 *    ADDSi    v32, 134217784
+    4   2 *    RDSPtr
+    5   2 *    CALLSYS  270           (void GameObject_t::destroy())
+- 1,2243 -
+    7   0 *    SUSPEND
+            0:
+    8   0 *    RET      2

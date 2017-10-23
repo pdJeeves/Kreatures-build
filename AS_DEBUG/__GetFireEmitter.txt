@@ -1,0 +1,201 @@
+ParticleEmitterDatablock@ GetFireEmitter()
+
+Temps: 4, 5, 6, 8, 9, 11, 12, 14
+
+Variables: 
+ 002: (heap) ParticleEmitterDatablock@ db
+ 004: (heap) ParticleEmitterDatablock {noname}
+ 008: (heap) Gradient {noname}
+ 011: (heap) Color {noname}
+ 014: (heap) ParticleDatablock {noname}
+ 006: Angle {noname}
+ 009: Color {noname}
+
+
+- 99,2 -
+    0  14 *    SUSPEND
+               VarDecl  0
+    1  14 *    PshGPtr  0x2f88e7e0e88          (i:3266565770888, f:1.6139e-311)
+    4  16 *    CHKREF
+    5  16 *    CALLSYS  818           (ParticleEmitterDatablock@ weakref::get() const)
+    7  14 *    FREE     v2, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   10  14 *    STOREOBJ v2
+- 101,2 -
+   11  14 *    SUSPEND
+   12  14 *    ClrVPtr  v4
+   13  14 *    CmpPtr   v2, v4
+   15  14 *    TNZ
+   16  14 *    CpyRtoV4 v5
+   17  14 *    FREE     v4, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   20  14 *    CpyVtoR4 v5
+   21  14 *    JLowZ    +4              (d:27)
+- 102,3 -
+   23  14 *    SUSPEND
+            {
+            }
+   24  14 *    LOADOBJ  v2
+   25  14 *    JMP      +214              (d:241)
+- 104,2 -
+            1:
+   27  14 *    SUSPEND
+   28  14 *    CALLSYS  237           (ParticleEmitterDatablock@ ParticleEmitterDatablock())
+   30  14 *    STOREOBJ v4
+   31  14 *    PshVPtr  v4
+   32  16 *    RefCpyV  v2, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   35  16 *    FREE     v4, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   38  16 *    PopPtr
+- 105,2 -
+   39  14 *    SUSPEND
+   40  14 *    PshVPtr  v2
+   41  16 *    RefCpyV  v4, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+   44  16 *    PopPtr
+   45  14 *    VAR      v4
+   46  16 *    PshGPtr  0x2f88e7e0e88          (i:3266565770888, f:1.6139e-311)
+   49  18 *    CHKREF
+   50  18 *    GETOBJ   2
+   51  18 *    CALLSYS  822           (weakref<ParticleEmitterDatablock>& weakref::opHndlAssign(ParticleEmitterDatablock@))
+- 109,2 -
+   53  14 *    SUSPEND
+   54  14 *    SetV4    v5, 0x41200000          (i:1092616192, f:10)
+   56  14 *    LoadRObjR v2, v144, 67108903
+   59  14 *    WRTV4    v5
+- 110,2 -
+   60  14 *    SUSPEND
+   61  14 *    SetV4    v5, 0x0          (i:0, f:0)
+   63  14 *    LoadRObjR v2, v148, 67108903
+   66  14 *    WRTV4    v5
+- 112,2 -
+   67  14 *    SUSPEND
+   68  14 *    SetV2    v5, 0xa
+   70  14 *    LoadRObjR v2, v152, 67108903
+   73  14 *    WRTV2    v5
+- 113,2 -
+   74  14 *    SUSPEND
+   75  14 *    SetV2    v5, 0x2
+   77  14 *    LoadRObjR v2, v154, 67108903
+   80  14 *    WRTV2    v5
+- 115,2 -
+   81  14 *    SUSPEND
+   82  14 *    PshC4    0x43b40000          (i:1135869952, f:360)
+   84  15 *    PSF      v6
+   85  17 *    CALLSYS  306           (Angle degrees(float))
+               ObjInfo  v6, 1
+   87  14 *    PSF      v6
+   88  16 *    PshVPtr  v2
+   89  18 *    ADDSi    v216, 67108903
+   91  18 *    COPY     v1, 67108882
+               ObjInfo  v6, 0
+   93  16 *    PopPtr
+- 116,2 -
+   94  14 *    SUSPEND
+   95  14 *    SetV2    v5, 0x0
+   97  14 *    LoadRObjR v2, v218, 67108903
+  100  14 *    WRTV2    v5
+- 117,2 -
+  101  14 *    SUSPEND
+  102  14 *    SetV2    v5, 0x0
+  104  14 *    LoadRObjR v2, v220, 67108903
+  107  14 *    WRTV2    v5
+- 119,2 -
+  108  14 *    SUSPEND
+  109  14 *    SetV4    v5, 0x3f800000          (i:1065353216, f:1)
+  111  14 *    LoadRObjR v2, v224, 67108903
+  114  14 *    WRTV4    v5
+- 120,2 -
+  115  14 *    SUSPEND
+  116  14 *    SetV4    v5, 0x0          (i:0, f:0)
+  118  14 *    LoadRObjR v2, v228, 67108903
+  121  14 *    WRTV4    v5
+- 122,2 -
+  122  14 *    SUSPEND
+  123  14 *    SetV4    v5, 0x8006          (i:32774, f:4.59262e-41)
+  125  14 *    LoadRObjR v2, v240, 67108903
+  128  14 *    WRTV4    v5
+- 123,2 -
+  129  14 *    SUSPEND
+  130  14 *    SetV4    v5, 0x302          (i:770, f:1.079e-42)
+  132  14 *    LoadRObjR v2, v244, 67108903
+  135  14 *    WRTV4    v5
+- 124,2 -
+  136  14 *    SUSPEND
+  137  14 *    SetV4    v5, 0x303          (i:771, f:1.0804e-42)
+  139  14 *    LoadRObjR v2, v248, 67108903
+  142  14 *    WRTV4    v5
+- 126,2 -
+  143  14 *    SUSPEND
+  144  14 *    SetV1    v5, 0x0
+  146  14 *    LoadRObjR v2, v232, 67108903
+  149  14 *    WRTV1    v5
+- 127,2 -
+  150  14 *    SUSPEND
+  151  14 *    SetV1    v5, 0x0
+  153  14 *    LoadRObjR v2, v233, 67108903
+  156  14 *    WRTV1    v5
+- 128,2 -
+  157  14 *    SUSPEND
+  158  14 *    SetV1    v5, 0x0
+  160  14 *    LoadRObjR v2, v234, 67108903
+  163  14 *    WRTV1    v5
+- 129,2 -
+  164  14 *    SUSPEND
+  165  14 *    SetV1    v5, 0x1
+  167  14 *    LoadRObjR v2, v235, 67108903
+  170  14 *    WRTV1    v5
+- 130,2 -
+  171  14 *    SUSPEND
+  172  14 *    SetV1    v5, 0x0
+  174  14 *    LoadRObjR v2, v252, 67108903
+  177  14 *    WRTV1    v5
+- 132,2 -
+  178  14 *    SUSPEND
+  179  14 *    PSF      v11
+  180  16 *    PshC4    0xffffffff          (i:-1, f:-nan)
+  182  17 *    PSF      v9
+  183  19 *    CALLSYS  378           (Color::Color(uint))
+               ObjInfo  v9, 1
+  185  16 *    PSF      v9
+  186  18 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+               ObjInfo  v9, 0
+  190  14 *    VAR      v11
+  191  16 *    PshC4    0x0          (i:0, f:0)
+  193  17 *    PshVPtr  v2
+  194  19 *    CALLSYS  525           (Gradient@ ParticleEmitterDatablock::get_startingColor() const)
+  196  17 *    STOREOBJ v8
+  197  17 *    PshVPtr  v8
+  198  19 *    GETOBJ   3
+  199  19 *    CALLSYS  216           (bool Gradient::add(float, Color))
+  201  14 *    FREE     v8, 0x8cc01820          (type:Gradient)
+- 133,2 -
+  204  14 *    SUSPEND
+  205  14 *    PSF      v11
+  206  16 *    PshC4    0xffffffff          (i:-1, f:-nan)
+  208  17 *    PSF      v9
+  209  19 *    CALLSYS  378           (Color::Color(uint))
+               ObjInfo  v9, 1
+  211  16 *    PSF      v9
+  212  18 *    ALLOC    0x2f88cb937e0, 377             (type:Color, Color::Color(const Color&in))
+               ObjInfo  v9, 0
+  216  14 *    VAR      v11
+  217  16 *    PshC4    0x3f800000          (i:1065353216, f:1)
+  219  17 *    PshVPtr  v2
+  220  19 *    CALLSYS  525           (Gradient@ ParticleEmitterDatablock::get_startingColor() const)
+  222  17 *    STOREOBJ v8
+  223  17 *    PshVPtr  v8
+  224  19 *    GETOBJ   3
+  225  19 *    CALLSYS  216           (bool Gradient::add(float, Color))
+  227  14 *    FREE     v8, 0x8cc01820          (type:Gradient)
+- 135,2 -
+  230  14 *    SUSPEND
+  231  14 *    CALL     825           (ParticleDatablock@ GetFireDB())
+  233  14 *    STOREOBJ v14
+  234  14 *    VAR      v14
+  235  16 *    PshVPtr  v2
+  236  18 *    GETOBJ   2
+  237  18 *    CALLSYS  527           (bool ParticleEmitterDatablock::add(ParticleDatablock@))
+- 137,2 -
+  239  14 *    SUSPEND
+            {
+            }
+  240  14 *    LOADOBJ  v2
+            0:
+  241  14 *    RET      0

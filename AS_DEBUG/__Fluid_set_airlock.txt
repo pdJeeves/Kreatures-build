@@ -1,0 +1,33 @@
+void Fluid::set_airlock(uint, Box2F)
+
+Temps: 2
+
+Variables: 
+ -002: uint i
+ -003: Box2F lock
+ 000: Fluid this
+ 002: (heap) Box2F {noname}
+
+
+- 1,603 -
+               VarDecl  0
+               VarDecl  1
+    0   2 *    SUSPEND
+    1   2 *    PSF      v2
+    2   4 *    ALLOC    0x2f88cbac3e0, 334             (type:Box2F, Box2F::Box2F())
+    6   2 *    PshVPtr  v-3
+    7   4 *    PshVPtr  v2
+    8   6 *    COPY     v4, 67108884
+   10   4 *    PopPtr
+   11   2 *    VAR      v2
+   12   4 *    PshV4    v-2
+   13   5 *    PshVPtr  v0
+   14   7 *    ADDSi    v40, 134217786
+   16   7 *    RDSPtr
+   17   7 *    GETOBJ   3
+   18   7 *    CALLSYS  437           (void Fluid_t::set_airlock(uint, Box2F))
+- 1,631 -
+   20   2 *    SUSPEND
+            0:
+   21   2 *    FREE     v-3, 0x8cbac3e0          (type:Box2F)
+   24   2 *    RET      5

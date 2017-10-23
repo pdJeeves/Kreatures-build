@@ -1,0 +1,50 @@
+
+string[] "Chemical Types" = {
+"All",
+"Digestive",
+"Immune",
+"Medical",
+"Cardiovascular",
+"Respiration",
+"Drives",
+"Male Hormones",
+"Female Hormones"
+}
+
+string[] "Chemical Type Lists" =
+{
+"Chemical List",
+"Digestive Chemicals",
+"Immune Chemicals",
+"Medical Chemicals",
+"Cardiovascular Chemicals",
+"Respiration Chemicals",
+"Drives",
+"Male Hormones",
+"Female Hormones"
+}
+
+string[] "Drives" =
+{
+"Pain",
+"Hunger for protein",
+"Hunger for carbohydrate",
+"Hunger for fat",
+"Coldness",
+"Hotness",
+"Tiredness",
+"Sleepiness",
+"Loneliness",
+"Crowded",
+"Fear",
+"Boredom",
+"Anger",
+"Sex drive",
+"Comfort",
+"Up Drive",
+"Down Drive",
+"Exit Drive",
+"Enter Drive",
+"Wait"
+}
+

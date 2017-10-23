@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JewelScript class GameTime Documentation</title>
+<style type="text/css">
+<!--
+ table, td { border-collapse:collapse; border:1px solid #222; } td { font-family:sans-serif; font-size:10pt; text-align:left; margin:0px; padding:4px 4px; } pre { font-family:monospace; font-size:10pt; margin:0px; padding:0px; } p { font-family:sans-serif; font-size:12pt; } td p { font-family:sans-serif; font-size:10pt; } ul { font-family:sans-serif; font-size:10pt; } a:link { text-decoration:none; color:#118; } a:visited { text-decoration:none; color:#161; } #content { margin:10px auto; width:800px; align:center; background:#fff; } #column1 { width:300px; } #table1 { width:800px; } #light { background:#f4f4f4; } #dark { background:#e4e4e4; } #scroll { display:block; overflow:auto; width:790px; border:0; } #footer { font-family:sans-serif; font-style:italic; font-size:8pt; text-align:center; }
+// -->
+</style>
+</head>
+<body>
+<div id='content'>
+<h1>class GameTime</h1>
+<p><a href="time.html">time</a> class for the game world, import '<a href="time.html">time</a>' for real world <a href="time.html">time</a>.</p>
+<p></p>
+<h3>Global Functions</h3>
+<table id='table1'>
+<tbody>
+<tr id='light'><td id='column1'>int <a href="GameTime.html#A0000">second</a> ()</td><td>.533333 ticks per <a href="GameTime.html#A0000">second</a></td></tr>
+<tr id='dark'><td id='column1'>int <a href="GameTime.html#A0001">minute</a> ()</td><td>1 <a href="GameTime.html#A0000">second</a> per <a href="GameTime.html#A0001">minute</a></td></tr>
+<tr id='light'><td id='column1'>int <a href="GameTime.html#A0002">hour</a> ()</td><td>60 minutes per <a href="GameTime.html#A0002">hour</a></td></tr>
+<tr id='dark'><td id='column1'>int <a href="GameTime.html#A0003">day</a> ()</td><td>24 hours per <a href="GameTime.html#A0003">day</a></td></tr>
+<tr id='light'><td id='column1'>int <a href="GameTime.html#A0004">week</a> ()</td><td>6 days per <a href="GameTime.html#A0004">week</a></td></tr>
+<tr id='dark'><td id='column1'>int <a href="GameTime.html#A0005">month</a> ()</td><td>5 weeks per <a href="GameTime.html#A0005">month</a></td></tr>
+<tr id='light'><td id='column1'>int <a href="GameTime.html#A0006">year</a> ()</td><td>4 months per <a href="GameTime.html#A0006">year</a></td></tr>
+<tr id='dark'><td id='column1'>int <a href="GameTime.html#A0007">dayOfMonth</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>float <a href="GameTime.html#A0008">sunriseTime</a> (<a href="Angle.html">Angle</a> latitude, <a href="Angle.html">Angle</a> axialTilt)</td><td></td></tr>
+<tr id='dark'><td id='column1'>float <a href="GameTime.html#A0009">sunsetTime</a> (<a href="Angle.html">Angle</a> latitude, <a href="Angle.html">Angle</a> axialTilt)</td><td></td></tr>
+<tr id='light'><td id='column1'>float <a href="GameTime.html#A0010">dayLength</a> (<a href="Angle.html">Angle</a> latitude, <a href="Angle.html">Angle</a> axialTilt)</td><td></td></tr>
+<tr id='dark'><td id='column1'>float <a href="GameTime.html#A0011">nightLength</a> (<a href="Angle.html">Angle</a> latitude, <a href="Angle.html">Angle</a> axialTilt)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="GameTime.html#A0012">schedule</a> (timeCommand, int <a href="GameTime.html#A0001">minute</a>, int <a href="GameTime.html#A0002">hour</a>, int day_of_week, int day_of_month, int month_of_year)</td><td>delegate timeCommand()
+
+-1 for any </td></tr>
+<tr id='dark'><td id='column1'><a href="GameTime.html#A0013">sunriseCommand</a> (timeCommand, <a href="Angle.html">Angle</a> tilt, <a href="Angle.html">Angle</a> latitude, int day_of_week, int day_of_month, int month_of_year)</td><td>delegate timeCommand()</td></tr>
+<tr id='light'><td id='column1'><a href="GameTime.html#A0014">sunsetCommand</a> (timeCommand, <a href="Angle.html">Angle</a> tilt, <a href="Angle.html">Angle</a> latitude, int day_of_week, int day_of_month, int month_of_year)</td><td>delegate timeCommand()</td></tr>
+<tr id='dark'><td id='column1'><a href="GameTime.html#A0015">removeCommand</a> (timeCommand)</td><td>delegate timeCommand()</td></tr>
+</tbody>
+</table>
+<h3>Named Constants</h3>
+<table id='table1'>
+<tbody>
+<tr id='light'><td id='column1'>ticksPerSecond</td></tr>
+<tr id='dark'><td id='column1'>daysPerWeek</td></tr>
+<tr id='light'><td id='column1'>weeksPerMonth</td></tr>
+<tr id='dark'><td id='column1'>monthsPerYear</td></tr>
+</tbody>
+</table>
+<div id='footer'><a href='index.html'>  class documentation</a> generated on 2017-01-28 20:46:28</div>
+</div>
+</body>
+</html>

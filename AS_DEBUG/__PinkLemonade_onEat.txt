@@ -1,0 +1,106 @@
+void PinkLemonade::onEat(GameObject@)
+
+Temps: 4, 5, 15, 16
+
+Variables: 
+ -002: GameObject@ it
+ 002: (heap) GenomeComponent@ creature
+ 000: PinkLemonade this
+ 004: (heap) GenomeComponent {noname}
+ 015: string {noname}
+
+
+- 31,3 -
+               VarDecl  0
+    0  16 *    SUSPEND
+               VarDecl  1
+    1  16 *    PshVPtr  v-2
+    2  18 *    CALLINTF 832           (GenomeComponent@ GameObject::genome())
+    4  16 *    FREE     v2, 0x8cc013c0          (type:GenomeComponent)
+    7  16 *    STOREOBJ v2
+- 33,3 -
+    8  16 *    SUSPEND
+    9  16 *    ClrVPtr  v4
+   10  16 *    CmpPtr   v2, v4
+   12  16 *    TNZ
+   13  16 *    CpyRtoV4 v5
+   14  16 *    FREE     v4, 0x8cc013c0          (type:GenomeComponent)
+   17  16 *    CpyVtoR4 v5
+   18  16 *    JLowZ    +72              (d:92)
+- 35,4 -
+            {
+   20  16 *    SUSPEND
+   21  16 *    PshC4    0xbe99999a          (i:-1097229926, f:-0.3)
+   23  17 *    STR      15         (l:14 s:"hunger for")
+   24  20 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
+   26  17 *    PshRPtr
+   27  19 *    PSF      v15
+   28  21 *    CALLSYS  45           (string::string(const string&in))
+               ObjInfo  v15, 1
+   30  17 *    VAR      v15
+   31  19 *    PshVPtr  v2
+   32  21 *    GETREF   2
+   33  21 *    CALLSYS  449           (int GenomeComponent::adjustChemical(const string&in, float))
+   35  16 *    PSF      v15
+   36  18 *    CALLSYS  46           (string::~string())
+- 36,4 -
+               ObjInfo  v15, 0
+   38  16 *    SUSPEND
+   39  16 *    PshC4    0xbe4ccccd          (i:-1102263091, f:-0.2)
+   41  17 *    STR      16         (l:18 s:"hunger for")
+   42  20 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
+   44  17 *    PshRPtr
+   45  19 *    PSF      v15
+   46  21 *    CALLSYS  45           (string::string(const string&in))
+               ObjInfo  v15, 1
+   48  17 *    VAR      v15
+   49  19 *    PshVPtr  v2
+   50  21 *    GETREF   2
+   51  21 *    CALLSYS  449           (int GenomeComponent::adjustChemical(const string&in, float))
+   53  16 *    PSF      v15
+   54  18 *    CALLSYS  46           (string::~string())
+- 37,4 -
+               ObjInfo  v15, 0
+   56  16 *    SUSPEND
+   57  16 *    PshC4    0x3dd70a3d          (i:1037503037, f:0.105)
+   59  17 *    STR      17         (l:3 s:"fat")
+   60  20 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
+   62  17 *    PshRPtr
+   63  19 *    PSF      v15
+   64  21 *    CALLSYS  45           (string::string(const string&in))
+               ObjInfo  v15, 1
+   66  17 *    VAR      v15
+   67  19 *    PshVPtr  v2
+   68  21 *    GETREF   2
+   69  21 *    CALLSYS  449           (int GenomeComponent::adjustChemical(const string&in, float))
+   71  16 *    PSF      v15
+   72  18 *    CALLSYS  46           (string::~string())
+- 38,4 -
+               ObjInfo  v15, 0
+   74  16 *    SUSPEND
+   75  16 *    PshC4    0x3dd70a3d          (i:1037503037, f:0.105)
+   77  17 *    STR      18         (l:7 s:"protien")
+   78  20 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
+   80  17 *    PshRPtr
+   81  19 *    PSF      v15
+   82  21 *    CALLSYS  45           (string::string(const string&in))
+               ObjInfo  v15, 1
+   84  17 *    VAR      v15
+   85  19 *    PshVPtr  v2
+   86  21 *    GETREF   2
+   87  21 *    CALLSYS  449           (int GenomeComponent::adjustChemical(const string&in, float))
+   89  16 *    PSF      v15
+   90  18 *    CALLSYS  46           (string::~string())
+- 42,3 -
+               ObjInfo  v15, 0
+            }
+            1:
+   92  16 *    SUSPEND
+   93  16 *    PshVPtr  v0
+   94  18 *    CALLINTF 859           (void GameObject::destroy())
+- 43,3 -
+   96  16 *    SUSPEND
+   97  16 *    FREE     v2, 0x8cc013c0          (type:GenomeComponent)
+            0:
+  100  16 *    FREE     v-2, 0x8cc0f2a0          (type:GameObject)
+  103  16 *    RET      4

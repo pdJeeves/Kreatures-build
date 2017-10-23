@@ -1,0 +1,13 @@
+<unrecognized token> _unnamed_function_()
+
+Temps: 
+
+Variables: 
+
+
+- 4,28 -
+    0   0 *    SUSPEND
+    1   0 *    PGA      0x2f88e7e1988          (i:3266565773704, f:1.6139e-311)
+    4   2 *    OBJTYPE  0x8cc0da90          (type:weakref)
+    7   4 *    ALLOC    0x2f88cc0da90, 19             (type:weakref, weakref::weakref(int&in))
+   11   0 *    RET      0

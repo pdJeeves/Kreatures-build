@@ -1,0 +1,122 @@
+FireEffect::FireEffect(Anchor, Point2F, Angle = Angle ( ))
+
+Temps: 2, 3, 5, 7, 9, 11, 15, 17, 19, 21
+
+Variables: 
+ -002: Anchor anchor
+ -004: Point2F offset
+ -006: Angle angle
+ 013: (heap) EmitterComponent@ emitter
+ 000: FireEffect this
+ 005: (heap) GameObject {noname}
+ 007: (heap) MovementComponent {noname}
+ 009: (heap) Angle {noname}
+ 011: (heap) Point2F {noname}
+ 015: (heap) RenderComponent {noname}
+ 017: null handle {noname}
+ 019: (heap) EmitterComponent {noname}
+ 021: (heap) ParticleEmitterDatablock {noname}
+
+
+- 145,3 -
+               VarDecl  0
+               VarDecl  1
+               VarDecl  2
+    0  21 *    SUSPEND
+    1  21 *    PshC8    0x2040          (i:8256, f:4.07901e-320)
+    4  23 *    PshVPtr  v0
+    5  25 *    CALL     707           (GameObject::GameObject(uint64))
+- 146,3 -
+    7  21 *    SUSPEND
+    8  21 *    SetV1    v3, 0x1
+   10  21 *    PshV4    v3
+   11  22 *    PshVPtr  v0
+   12  24 *    RefCpyV  v5, 0x8cc0f2a0          (type:GameObject)
+   15  24 *    CALLINTF 858           (void GameObject::set_processingTicks(bool))
+   17  21 *    FREE     v5, 0x8cc0f2a0          (type:GameObject)
+- 147,3 -
+   20  21 *    SUSPEND
+   21  21 *    PSF      v9
+   22  23 *    ALLOC    0x2f88cbabf80, 302             (type:Angle, Angle::Angle())
+   26  21 *    PshVPtr  v-6
+   27  23 *    PshVPtr  v9
+   28  25 *    COPY     v1, 67108882
+   30  23 *    PopPtr
+   31  21 *    VAR      v9
+   32  23 *    PSF      v11
+   33  25 *    ALLOC    0x2f88cc10880, 543             (type:Point2F, Point2F::Point2F())
+   37  23 *    PshVPtr  v-4
+   38  25 *    PshVPtr  v11
+   39  27 *    COPY     v2, 67108906
+   41  25 *    PopPtr
+   42  23 *    VAR      v11
+   43  25 *    VAR      v-2
+   44  27 *    PshVPtr  v0
+   45  29 *    CALLINTF 830           (MovementComponent@ GameObject::movement())
+   47  27 *    STOREOBJ v7
+   48  27 *    PshVPtr  v7
+   49  29 *    GETOBJREF 2
+   50  29 *    GETOBJ   4
+   51  29 *    GETOBJ   6
+   52  29 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
+   54  21 *    FREE     v7, 0x8cc02770          (type:MovementComponent)
+- 149,3 -
+   57  21 *    SUSPEND
+               VarDecl  3
+   58  21 *    PshVPtr  v0
+   59  23 *    CALLINTF 834           (RenderComponent@ GameObject::render())
+   61  21 *    STOREOBJ v15
+   62  21 *    ClrVPtr  v17
+   63  21 *    CmpPtr   v15, v17
+   65  21 *    JZ       +9              (d:76)
+   67  21 *    PshVPtr  v15
+   68  23 *    CALLSYS  427           (EmitterComponent@ RenderComponent::opCast())
+   70  21 *    STOREOBJ v19
+   71  21 *    FREE     v15, 0x8cc10ab0          (type:RenderComponent)
+   74  21 *    JMP      +1              (d:77)
+            1:
+   76  21 *    ClrVPtr  v19
+            2:
+   77  21 *    PshVPtr  v19
+   78  23 *    RefCpyV  v13, 0x8cc01a50          (type:EmitterComponent)
+   81  23 *    FREE     v19, 0x8cc01a50          (type:EmitterComponent)
+   84  23 *    PopPtr
+- 150,3 -
+   85  21 *    SUSPEND
+   86  21 *    SetV2    v3, 0x1f4
+   88  21 *    PshVPtr  v0
+   89  23 *    CALLINTF 834           (RenderComponent@ GameObject::render())
+   91  21 *    STOREOBJ v15
+   92  21 *    LoadRObjR v15, v48, 67108907
+   95  21 *    WRTV2    v3
+   96  21 *    FREE     v15, 0x8cc10ab0          (type:RenderComponent)
+- 151,3 -
+   99  21 *    SUSPEND
+  100  21 *    CALL     826           (ParticleEmitterDatablock@ GetFireEmitter())
+  102  21 *    STOREOBJ v21
+  103  21 *    VAR      v21
+  104  23 *    PshVPtr  v13
+  105  25 *    GETOBJ   2
+  106  25 *    CALLSYS  429           (void EmitterComponent::set_datablock(ParticleEmitterDatablock@))
+- 152,3 -
+  108  21 *    SUSPEND
+  109  21 *    SetV1    v3, 0x1
+  111  21 *    PshV4    v3
+  112  22 *    PshVPtr  v13
+  113  24 *    CALLSYS  430           (void EmitterComponent::set_emitting(bool))
+- 154,3 -
+  115  21 *    SUSPEND
+  116  21 *    PshVPtr  v13
+  117  23 *    CALLSYS  428           (ParticleEmitterDatablock@ EmitterComponent::get_datablock() const)
+  119  21 *    STOREOBJ v21
+  120  21 *    PshVPtr  v21
+  121  23 *    CALLSYS  526           (void ParticleEmitterDatablock::edit())
+  123  21 *    FREE     v21, 0x8cc01eb0          (type:ParticleEmitterDatablock)
+- 155,3 -
+  126  21 *    SUSPEND
+  127  21 *    FREE     v13, 0x8cc01a50          (type:EmitterComponent)
+            0:
+  130  21 *    FREE     v-2, 0x8cbabd50          (type:Anchor)
+  133  21 *    FREE     v-4, 0x8cc10880          (type:Point2F)
+  136  21 *    FREE     v-6, 0x8cbabf80          (type:Angle)
+  139  21 *    RET      8

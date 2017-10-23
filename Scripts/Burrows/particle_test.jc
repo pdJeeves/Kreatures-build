@@ -1,0 +1,104 @@
+import all;
+ 
+class EmitterTest extends GameObject
+{
+	method EmitterTest(const Anchor location, const Point2F offset) extends GameObject()
+	{
+		int i = 0; ++i;
+		
+		physics().elasticity = 1.0;
+		physics().friction = .5;
+		
+		physics().respondToPhysicalZones(1); 
+		
+		emitter().drawOrder = 3000;
+		emitter().setDatablock(defineTestEmitter());
+		movement().setPosition(location, offset, null);
+		processingTicks(1);
+	}
+	
+	method initialize(Builder self)
+	{
+		self.addMovement(Standard);
+		self.addRender(3);
+		self.addCollision(1);
+		self.addPhysics(1);
+	}
+	
+}
+
+ParticleData testParticle = null;
+
+function ParticleData defineTestParticle()
+{
+	if(testParticle == null)
+	{
+		testParticle = new ParticleData();
+	
+		testParticle.initialVelocity = 50;
+		testParticle.constantAcceleration = 0;
+		testParticle.gravity = 1;
+		testParticle.drag    = 0;
+		
+		testParticle.spinStart = Angle::degrees(0);
+		testParticle.spinRange = Angle::degrees(0);
+		
+		testParticle.color(0, new Color(255,   0,   0, 255));
+		testParticle.color(1, new Color(255, 255,   0, 255));
+		testParticle.color(2, new Color(0  , 255,   0, 255));
+		testParticle.color(3, new Color(0  , 255, 255, 255));
+	
+		testParticle.size(0, 1);
+		testParticle.size(1, 2);
+		testParticle.size(2, 3);
+		testParticle.size(3, 4);
+		testParticle.sizeVariance = 2;
+		
+		testParticle.life = 10;
+		testParticle.lifeVariance = 2;
+	
+		testParticle.time(0, .25);
+		testParticle.time(1, .50);
+		testParticle.time(2, .75);
+		testParticle.time(3, 1.0);
+	
+	}
+
+	return testParticle;
+}
+
+EmitterData testEmitter = null;
+
+function EmitterData defineTestEmitter()
+{
+	if(testEmitter == null)
+	{
+		testEmitter = new EmitterData();
+		
+		testEmitter.sprite = "system";
+		testEmitter.frame = 0;
+		
+		testEmitter.life = 20;
+		testEmitter.lifeVariance = 2;
+		testEmitter.emissionRate = 20;
+		testEmitter.emissionRateVariance = 10;
+		testEmitter.initialVelocity = 40;
+		testEmitter.initialVelocityVariance = 40;
+		testEmitter.emissionDistance = 0;
+		testEmitter.spreadStart = Angle::degrees(0);
+		testEmitter.spreadRange = Angle::degrees(0);
+		
+		testEmitter.areaEmitter = false;
+		testEmitter.sortParticles = false;
+		testEmitter.infinteEmission = false;
+		testEmitter.orientTextures = false;
+		
+		testEmitter.setParticles(0, defineTestParticle());
+	}
+	
+	return testEmitter;
+}
+
+
+
+

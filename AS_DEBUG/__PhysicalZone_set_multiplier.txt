@@ -1,0 +1,24 @@
+void PhysicalZone::set_multiplier(Point2F)
+
+Temps: 
+
+Variables: 
+ -002: Point2F v
+ 000: PhysicalZone this
+
+
+- 1,538 -
+               VarDecl  0
+    0   0 *    SUSPEND
+    1   0 *    PshVPtr  v-2
+    2   2 *    PshVPtr  v0
+    3   4 *    ADDSi    v40, 134217787
+    5   4 *    RDSPtr
+    6   4 *    ADDSi    v28, 67108904
+    8   4 *    COPY     v2, 67108906
+   10   2 *    PopPtr
+- 1,563 -
+   11   0 *    SUSPEND
+            0:
+   12   0 *    FREE     v-2, 0x8cc10880          (type:Point2F)
+   15   0 *    RET      4

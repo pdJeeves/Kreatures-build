@@ -1,0 +1,95 @@
+import all;
+ 
+ 
+/* GameObject and it's subclasses are all the only classes not reference counted */
+class PinkLemonade extends GameObject
+{
+	method PinkLemonade(const Anchor location, const Point2F offset, const Angle angle) extends GameObject()
+	{
+		mouseable(1);
+		
+		sprite().file = "pink_lemonade";
+		sprite().frame = 12;
+		sprite().drawOrder = 1000;
+		
+		movement().setPosition(location, offset, angle);
+	}
+	
+	method initialize(Builder self)
+	{
+		self.addMovement(Standard);
+		self.addRender(Standard);
+		
+		self.registerScript(Script::PickedUp, wasPickedUp);
+		self.registerScript(Script::Dropped, wasDropped);
+	}
+	
+	method wasPickedUp(GameObject it)
+	{
+		sprite().frame = 10;
+	}
+	
+	method wasDropped(GameObject it)
+	{
+		sprite().frame = 11 + (math::random() & 0x01);
+	}
+}
+
+class LemonadeMachine extends GameObject
+{
+	method LemonadeMachine(const Anchor location, const Point2F offset, const Angle angle) extends GameObject()
+	{
+		mouseable(1);
+		Sprite machine = Sprite::get("pink_lemonade");
+		
+		if(machine.noAnimations == 0)
+		{
+			machine.addAnimation("dispense", {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0}, .064);
+			machine.addAttachment("dispense", { machine.size(0).x/4, machine.size(0).y - machine.size(12).y}, 9);
+			machine.addAttachment("Pivot", { machine.size(0).x/4, machine.size(0).y - machine.size(12).y}, 0, 9 );
+			
+		}
+		
+		clickable(1);
+		pushable(1);
+				
+		sprite().file = "pink_lemonade";
+		sprite().drawOrder = 500;
+		
+		movement().setPosition(location, offset, angle);
+		processingTicks(0);
+	}
+		
+	method initialize(Builder self)
+	{
+		self.addMovement(Standard);
+		self.addRender(Standard);
+		
+		self.registerScript(Script::Click, onClick);
+		self.registerScript(Script::Activate1, onPushed);
+	}
+	
+	method onClick(Point2F pos)
+	{
+		onPushed(null);
+	}
+	
+	method onPushed(GameObject it)
+	{
+		clickable(0);
+		pushable(0);
+		processingTicks(1);
+		sprite().setAnimation("dispense");
+		sprite().over(dispenseLemonade);
+	}
+	
+	method dispenseLemonade()
+	{
+		new PinkLemonade(this.movement(), this.sprite().attachment("dispense"), this.movement().angle());
+		processingTicks(0);
+		clickable(1);
+		pushable(1);
+		sprite().frame = 0;
+	}
+}
+

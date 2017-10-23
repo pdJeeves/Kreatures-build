@@ -1,0 +1,12 @@
+
+string[] "Lift" = 
+{
+"Lift",
+"Creatures can get from one floor to another with the lift."
+}
+
+string[] "LiftCallButton" = 
+{
+"Lift Call Button",
+"Pressing this button calls the lift from another floor."
+}

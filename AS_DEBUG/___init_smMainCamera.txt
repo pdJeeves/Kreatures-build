@@ -1,0 +1,18 @@
+<unrecognized token> _unnamed_function_()
+
+Temps: 2
+
+Variables: 
+ 002: (heap) MainCamera {noname}
+
+
+- 14,12 -
+    0   2 *    SUSPEND
+    1   2 *    CALL     768           (Engine::MainCamera@ MainCamera())
+    3   2 *    STOREOBJ v2
+    4   2 *    PshVPtr  v2
+    5   4 *    PGA      0x2f88e7e12a8          (i:3266565771944, f:1.6139e-311)
+    8   6 *    REFCPY   0x2f88cc0f930          (i:3266536601904, f:1.61388e-311)
+   11   4 *    PopPtr
+   12   2 *    FREE     v2, 0x8cc0f930          (type:MainCamera)
+   15   2 *    RET      0

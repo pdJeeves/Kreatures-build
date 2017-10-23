@@ -1,0 +1,15 @@
+void CallButtonBase::onPushed(GameObject@)
+
+Temps: 
+
+Variables: 
+ -002: GameObject@ it
+ 000: CallButtonBase this
+
+
+- 38,6 -
+               VarDecl  0
+    0   0 *    SUSPEND
+            0:
+    1   0 *    FREE     v-2, 0x8cc0f2a0          (type:GameObject)
+    4   0 *    RET      4

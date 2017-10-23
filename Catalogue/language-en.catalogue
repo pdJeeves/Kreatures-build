@@ -1,0 +1,64 @@
+// Norn.catalogue
+//
+// Catalogue file - Norn vocab information
+//
+// Created 04 Apr 99 gtb
+// learnt words added 20 Aug 99 dkb
+
+
+string[] "Learnt Specials" =
+{
+	"yes",			// posative reward/statement
+	"no",			// negative punish
+	"look",			// look
+	"what",			// what
+	"happy",		// personal state
+	"like",			// posative preferance
+	"dislike",		// negative preference
+	"love",			// big posative preferance
+	"hate",			// big negative preference
+	"maybe",		// unsure of decision
+	"definitely",	// sure of decision
+	"ill"			// sick
+}
+
+
+string[] "Learnt Nice Drives" =
+{
+	"well",		// not hurt
+	"full",		// full of protein
+	"full", 	// full of carbohydrate
+	"full", 	// full of fat
+	"cosy", 	// not cold
+	"snug", 	// not hot
+	"alert",	// not tired
+	"awake",	// not sleepy
+	"content",	// not lonely
+	"serene",	// not crowded
+	"safe",		// not scared
+	"excited",	// not bored
+	"peaceful",	// not angry
+	"quiet",	// not friendly
+	"secure",	// not home sick
+	"tranquil",	// not low down (the next four are random)
+	"calm",		// not high up
+	"gentle",	// not trapped
+	"still",	// not trapped 2
+	"relaxed"	// not patient (but not impatient.. just something positive..)
+}
+
+
+
+string[] "Learnt Qualifiers" =
+{
+	"quite",		
+	"really",			
+	"very",		
+	"extremely",
+	"intensely"	
+}
+
+string[1] "Learnt Personals" = 
+{
+	"me"		//me 
+}

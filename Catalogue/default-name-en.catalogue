@@ -1,0 +1,10 @@
+
+strings[] "Default Name" = {
+	"<No Name>"
+}
+
+strings[] "Genders" = {
+	"Male",
+	"Female"
+}
+

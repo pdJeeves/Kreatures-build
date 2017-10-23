@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JewelScript class Builder Documentation</title>
+<style type="text/css">
+<!--
+ table, td { border-collapse:collapse; border:1px solid #222; } td { font-family:sans-serif; font-size:10pt; text-align:left; margin:0px; padding:4px 4px; } pre { font-family:monospace; font-size:10pt; margin:0px; padding:0px; } p { font-family:sans-serif; font-size:12pt; } td p { font-family:sans-serif; font-size:10pt; } ul { font-family:sans-serif; font-size:10pt; } a:link { text-decoration:none; color:#118; } a:visited { text-decoration:none; color:#161; } #content { margin:10px auto; width:800px; align:center; background:#fff; } #column1 { width:300px; } #table1 { width:800px; } #light { background:#f4f4f4; } #dark { background:#e4e4e4; } #scroll { display:block; overflow:auto; width:790px; border:0; } #footer { font-family:sans-serif; font-style:italic; font-size:8pt; text-align:center; }
+// -->
+</style>
+</head>
+<body>
+<div id='content'>
+<h1>class Builder</h1>
+<p>The builder is created during the construction of a <a href="GameObject.html">GameObject</a>, and accessed in the initialize() method.  Do not store a pointer to this type, accessing it once the initialize method finishes will result in a crash.
+
+See <a href="Script.html">Script</a> for script numbers.</p>
+<p></p>
+<h3>Global Functions</h3>
+<table id='table1'>
+<tbody>
+<tr id='light'><td id='column1'><a href="GameObject.html">GameObject</a> <a href="Builder.html#A0000">hots</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>GameObjectInternal <a href="Builder.html#A0001">theHand</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>GameObjectInternal <a href="Builder.html#A0002">mainCamera</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>GameObjectInternal <a href="Builder.html#A0003">ron</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0004">totalObjects</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="GameObject.html">GameObject</a> <a href="Builder.html#A0005">getObject</a> (int)</td><td></td></tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table id='table1'>
+<tbody>
+<tr id='light'><td id='column1'><a href="Builder.html#A0006">Builder</a> (<a href="GameObject.html">GameObject</a> _this)</td><td></td></tr>
+</tbody>
+</table>
+<h3>Methods</h3>
+<table id='table1'>
+<tbody>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0010">registerScript</a> (int i, scriptCallback)</td><td>delegate scriptCallback(<a href="GameObject.html">GameObject</a>)</td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0010">registerScript</a> (int i, timerCallback)</td><td>delegate timerCallback()</td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0010">registerScript</a> (int i, clickCallback)</td><td>delegate clickCallback(<a href="Point2F.html">Point2F</a>)</td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0010">registerScript</a> (int i, collisionCallback)</td><td>delegate collisionCallback(<a href="CollisionData.html">CollisionData</a>)</td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0011">addMovement</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0012">addPhysics</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0013">addCollision</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0014">addRender</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0015">addCabin</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'>GameObjectInternal <a href="Builder.html#A0016">destruct</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0017">destroy</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0018">isTouching</a> (const <a href="Point2F.html">Point2F</a> position, const <a href="Point2F.html">Point2F</a> size)</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0019">isVisible</a> (const <a href="Point2F.html">Point2F</a> position, const <a href="Point2F.html">Point2F</a> size)</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0020">isAudible</a> (const <a href="Point2F.html">Point2F</a> position, const <a href="Point2F.html">Point2F</a> size)</td><td></td></tr>
+</tbody>
+</table>
+<h3>Getters</h3>
+<table id='table1'>
+<tbody>
+<tr id='dark'><td id='column1'><a href="MovementComponent.html">MovementComponent</a> <a href="Builder.html#A0021">movement</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="PhysicsComponent.html">PhysicsComponent</a> <a href="Builder.html#A0022">physics</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="SpriteComponent.html">SpriteComponent</a> <a href="Builder.html#A0023">sprite</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="CabinComponent.html">CabinComponent</a> <a href="Builder.html#A0024">cabin</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0026">processingTicks</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0028">catagory</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0038">carryable</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0039">mouseable</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0040">clickable</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0041">pushable</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0042">pullable</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0043">deactivatable</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0044">hitable</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0045">edible</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0046">liftable</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>float <a href="Builder.html#A0048">tickDuration</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0049">renderedLastFrame</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0050">makingNoise</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>const <a href="string.html">string</a> <a href="Builder.html#A0051">className</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0052">typeID</a> ()</td><td></td></tr>
+<tr id='dark'><td id='column1'>int <a href="Builder.html#A0053">uniqueID</a> ()</td><td></td></tr>
+<tr id='light'><td id='column1'>int <a href="Builder.html#A0054">refCount</a> ()</td><td></td></tr>
+</tbody>
+</table>
+<h3>Setters</h3>
+<table id='table1'>
+<tbody>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0026">processingTicks</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="Builder.html#A0028">catagory</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0038">carryable</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="Builder.html#A0039">mouseable</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0040">clickable</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="Builder.html#A0041">pushable</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0042">pullable</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="Builder.html#A0043">deactivatable</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0044">hitable</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="Builder.html#A0045">edible</a> (int)</td><td></td></tr>
+<tr id='dark'><td id='column1'><a href="Builder.html#A0046">liftable</a> (int)</td><td></td></tr>
+<tr id='light'><td id='column1'><a href="Builder.html#A0048">tickDuration</a> (float)</td><td></td></tr>
+</tbody>
+</table>
+<div id='footer'><a href='index.html'>  class documentation</a> generated on 2017-01-28 20:46:28</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+import Burrows.eyeball;
+import Burrows.lift;
+import Burrows.lemonademachine;
+import Burrows.placeholder;
+import Burrows.particle_test;
+import Common.parallax;
+import Common.water;
+import Burrows.norn;
+
+function Anchor createBurrows()
+{
+	Anchor buro = Anchor::getBackground("regenesis-ca");
+	buro.connect(buro, Direction::Left, 0);
+	return buro;	
+}
+
+FluidZone    darkOcean;
+PhysicalZone buroGravity;
+ 
+function addKitchenElevator(const Anchor buro)
+{
+	Lift lift = new Lift(buro, {2740, 240});
+	lift.addButton(buro, {2860, 310});
+	lift.addButton(buro, {2700, 620});
+	lift.addButton(buro, {2860, 845}); 
+}
+ 
+function addGreatHallElevator(const Anchor buro)
+{
+	Lift lift = new Lift(buro, {3664, 51});
+	lift.addButton(buro, {3824, 310});
+	lift.addButton(buro, {3824, 845});
+	lift.addButton(buro, {3824, 1010});
+} 
+
+function addIncubatorElevator(const Anchor buro)
+{
+	Lift lift = new Lift(buro, {5160, 240});
+	lift.addButton(buro, {5112, 310});
+	lift.addButton(buro, {5112, 620});
+	lift.addButton(buro, {5112, 845});
+}
+
+function addTunnelElevator(const Anchor buro)
+{
+	Lift lift = new Lift(buro, {5770, 780});
+	lift.addButton(buro, {5710, 845});
+	lift.addButton(buro, {5710, 1010});
+}
+/*
+	Norn norn = new Norn(buro, {2600, 300} );
+*/
+function main()
+{
+	Anchor buro = createBurrows();	
+	
+	buroGravity = new PhysicalZone(buro, null);
+	buroGravity.acceleration = {0, 256};
+
+	new LemonadeMachine(buro, {2400, 600}, null);
+	new LemonadeMachine(buro, {2400, 600}, Angle::degrees(45));
+
+//	EyeBall eye_ball = new EyeBall(buro, {2600, 300} );
+	Norn norn = new Norn(buro, {2590, 1000} );
+	
+	addKitchenElevator(buro);
+	addGreatHallElevator(buro);
+	addIncubatorElevator(buro);
+	addTunnelElevator(buro);
+	
+	GameObjectInternal::mainCamera().movement().setPosition(buro, {2700, 0}, null);
+}
+

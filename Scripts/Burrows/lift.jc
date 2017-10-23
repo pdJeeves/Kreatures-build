@@ -1,0 +1,251 @@
+import all;
+
+class Lift;
+
+class CallButton extends GameObject {
+private Lift lift;
+	
+	/*an anchor is a handle for a coordinate system */
+	method CallButton(Lift _lift, const Anchor location, const Point2F offset) extends GameObject() {
+		/* you can ask an object about it's className() rather than having genus/species */
+		/* className() is used to look up help in the catalogue */
+		catagory(Catagory::Button);
+		clickable(1);
+		pushable(1);
+		
+		lift = _lift;
+		
+		sprite().file = "c1_lift";
+		sprite().drawOrder = 310;
+		sprite().frame = 5;
+		movement().setPosition(location, offset, null);
+	}
+	
+	/* The initialzie method lets you add scripts and components to objects, the builder is deleted after this so storing it will cause a crash.  It is done this way to make save files more consistent */
+	method initialize(Builder self) {
+		self.addMovement(RelativeMovement);
+		self.addRender(SpritePolicy);
+		self.registerScript(Script::Click, onClick);
+		self.registerScript(Script::Activate1, onPushed);
+	}
+	
+	method onClick(Point2F pos) { onPushed(null); }
+	method arrived() { sprite().frame = 5; }
+	
+	method onPushed(GameObject it) {
+		if(this.sprite().frame == 6)
+			return;
+		
+		playSound("ding.wav" , 0, 0);
+		sprite().frame = 6;		
+		lift.called(this);
+	}
+	
+	
+	method float bottom() {
+		return this.movement().position.y + this.movement().size.y;
+	}
+}
+
+class LiftButton extends GameObject
+{
+private Lift lift;
+	
+	method LiftButton(Lift _lift) extends GameObject() {
+		lift = _lift;
+		clickable(1);
+		
+		sprite().file = "c1_lift";
+		sprite().drawOrder = _lift.sprite().drawOrder + 1;
+		sprite().frame = 2;
+		
+		movement().relative(lift, "button", "button_mount");
+	}
+	
+	method initialize(Builder self) {
+		self.addMovement(RelativeMovement);
+		self.addRender(1);
+		self.registerScript(Script::Click, onClick);
+	}
+	
+	method onClick(Point2F pos)
+	{
+		playSound("Sounds/ding.wav" , 0, 0);
+		if(pos.y < this.movement().size.y/2)
+			lift.onPulled(null);
+		else
+			lift.onPushed(null);
+	}
+}
+
+class ObjectOverlay extends GameObject {
+	method ObjectOverlay() extends GameObject() { }
+	
+	method initialize(Builder self) {
+		self.addRender(SpritePolicy);
+		self.addMovement(RelativeMovement);
+	}
+}
+
+class Lift extends GameObject {
+private int state;
+private int floor;
+private Point2F target;
+private ObjectOverlay overlay;
+private LiftButton button;
+private CallButton[] buttons;
+	
+	method Lift(const Anchor location, const Point2F offset) extends GameObject() {
+		Sprite spr = Sprite::get("c1_lift");
+		/*Sprite is a sprite file, handle so it only needs to have attachments added once */ 
+		if(spr.noAttachments(0) == 0)
+		{
+		/* if an object is positioned with an attachment then it will rotate and scale with the object it is positioned relative to */
+		/* arg1 = attachment name
+		   arg2 = attachment coordinates
+		   arg3 frame or frame list */
+			spr.addAttachment("button", {180, 160}, 0);
+			spr.addAttachment("button_mount", {0, 0}, {2, 3, 4});
+		}
+		
+		buttons = new array();
+		target = new Point2F();
+		state = 0;
+		floor = 0;
+		pushable(1);
+		pullable(1);
+		catagory(Catagory::Lift);
+		
+		sprite().file = "c1_lift";
+		sprite().frame = 0;
+		sprite().drawOrder = 50;
+		movement().setPosition(location, offset, null);
+		
+		/* the inside of a cabin represents a coordinate system indistingushable from a metaroom's coorindate system */
+		cabin().dimensions( { 50, 72, 150, 230 } );
+		cabin().transparent = true;
+
+		overlay = new ObjectOverlay();
+		overlay.sprite().file = "c1_lift";
+		overlay.sprite().frame = 1;
+		overlay.sprite().drawOrder = this.sprite().drawOrder + 1;
+		
+		overlay.movement().relative(this, null, null);
+		
+		button = null;
+		button = new LiftButton(this);	
+	}
+	
+	method initialize(Builder self) {
+		self.addMovement(Standard);
+		self.addPhysics(Standard);
+		self.addRender(Standard);
+		self.addCabin(Standard);
+		
+		self.registerScript(Script::Activate1, onPushed);
+		self.registerScript(Script::Activate2, onPulled);
+		self.registerScript(Script::Tick, onTick);
+		self.registerScript(Script::Destroy, onDestroy);
+	}
+	
+	method addButton(const Anchor location, const Point2F offset)
+	{
+		buttons.push(new CallButton(this, location, offset));
+	}
+	
+	method onDestroy()
+	{
+	/* onDestroy is a virtual called when the destroy() method is called and acts as a destructor,
+	   if destroy() is called mutliple times onDestroy() will only be called once, so don't worry about loops */
+		for(int i = 0; i < buttons.length; ++i)
+			buttons[i].destroy();
+		
+		button.destroy();
+		overlay.destroy();
+	}
+		
+	method onPushed(GameObject it)
+	{	
+		if(state == 0 && floor+1 < buttons.length)
+			buttons[floor+1].onPushed(null);
+	}
+	
+	method onPulled(GameObject it)
+	{
+		if(state == 0 && floor != 0)
+			buttons[floor-1].onPushed(null);
+	}
+	
+	method called(CallButton it)
+	{
+		if(this.tickDuration() == 0) {
+			processingTicks(1);
+			overlay.processingTicks(1);
+			button.processingTicks(1);
+			
+			/* tickDuration sets the number of seconds until the tick script runs, 
+			tickDuration <= 0 means no tick script
+			tickDuration <= .032 means .032 */
+			
+			tickDuration(1.0);
+		}
+	}
+	
+	method onTick()
+	{
+		if(state != 0)
+		{
+			if(!this.movement().sameSection(buttons[floor + state].movement()))
+				return;
+			
+			if((state < 0) != this.movement().position.y < target.y)
+				return;
+			
+			
+			tickDuration(0.0);
+			
+		//update state information
+			 button.sprite().frame = 2;
+			floor = floor + state;
+			state = 0;
+			
+			buttons[floor].arrived();
+	//stop moving
+			physics().velocity = { 0 , 0 };
+			movement().position = target;
+			target.set(0, 0);
+			cabin().dropPassengers(-1);
+			cancelSound();
+		
+		//check if we need to go again
+		
+			for(int i = 0; i < buttons.length(); ++i) {
+				if(buttons[i].sprite().frame == 6) {
+					tickDuration(3.0);
+					break;
+			}}
+		}
+	
+		for(int i = 0; i < buttons.length(); ++i)
+		   if(buttons[i].sprite().frame == 6) {
+				if(i == floor)
+					buttons[floor].arrived();
+				else {
+					state = i - floor;
+					button.sprite().frame = state < 0? 3 : 4;
+					cabin().getPassengers(Catagory::Creature);
+					physics().velocity = { 0, state < 0? -100 : 100 };
+					playSound("lft2.wav" , 0, 0);
+					target.set(this.movement().position().x, buttons[i].bottom() - this.movement().size().y);
+					tickDuration(.05);				
+					break;
+			}}
+			
+		if(this.tickDuration() == 0) {
+			processingTicks(0);
+			overlay.processingTicks(0);
+			button.processingTicks(0);
+		}
+	}
+}
+

@@ -1,0 +1,23 @@
+void CallButtonBase::onClick(Point2F)
+
+Temps: 2
+
+Variables: 
+ -002: Point2F pos
+ 000: CallButtonBase this
+ 002: (heap) GameObject {noname}
+
+
+- 32,9 -
+               VarDecl  0
+    0   2 *    SUSPEND
+    1   2 *    FREE     v2, 0x8cc0f2a0          (type:GameObject)
+    4   2 *    VAR      v2
+    5   4 *    PshVPtr  v0
+    6   6 *    GETOBJ   2
+    7   6 *    CALLINTF 887           (void CallButtonBase::onPushed(GameObject@))
+- 33,6 -
+    9   2 *    SUSPEND
+            0:
+   10   2 *    FREE     v-2, 0x8cc10880          (type:Point2F)
+   13   2 *    RET      4

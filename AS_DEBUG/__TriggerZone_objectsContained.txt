@@ -1,0 +1,20 @@
+uint TriggerZone::objectsContained() const
+
+Temps: 1
+
+Variables: 
+ 000: TriggerZone this
+
+
+- 1,378 -
+    0   1 *    SUSPEND
+    1   1 *    PshVPtr  v0
+    2   3 *    ADDSi    v32, 134217785
+    4   3 *    RDSPtr
+    5   3 *    CALLSYS  685           (uint TriggerZone_t::objectsContained())
+    7   1 *    CpyRtoV4 v1
+            {
+            }
+    8   1 *    CpyVtoR4 v1
+            0:
+    9   1 *    RET      2

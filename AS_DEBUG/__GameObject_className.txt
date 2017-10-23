@@ -1,0 +1,28 @@
+string GameObject::className() const
+
+Temps: 10
+
+Variables: 
+ 000: GameObject this
+ 010: string {noname}
+
+
+- 1,2028 -
+    0  10 *    SUSPEND
+    1  10 *    PSF      v10
+    2  12 *    PshVPtr  v0
+    3  14 *    ADDSi    v32, 134217784
+    5  14 *    RDSPtr
+    6  14 *    CALLSYS  292           (string GameObject_t::className() const)
+               ObjInfo  v10, 1
+    8  10 *    PSF      v10
+    9  12 *    PshVPtr  v-2
+   10  14 *    CALLSYS  45           (string::string(const string&in))
+   12  10 *    PSF      v10
+   13  12 *    CALLSYS  46           (string::~string())
+               ObjInfo  v10, 0
+               ObjInfo  v-2, 1
+            {
+            }
+            0:
+   15  10 *    RET      4

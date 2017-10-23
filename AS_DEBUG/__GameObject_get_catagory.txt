@@ -1,0 +1,20 @@
+Catagory GameObject::get_catagory() const
+
+Temps: 1
+
+Variables: 
+ 000: GameObject this
+
+
+- 1,983 -
+    0   1 *    SUSPEND
+    1   1 *    PshVPtr  v0
+    2   3 *    ADDSi    v32, 134217784
+    4   3 *    RDSPtr
+    5   3 *    CALLSYS  283           (Catagory GameObject_t::get_catagory() const)
+    7   1 *    CpyRtoV4 v1
+            {
+            }
+    8   1 *    CpyVtoR4 v1
+            0:
+    9   1 *    RET      2

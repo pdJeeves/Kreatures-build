@@ -1,0 +1,21 @@
+const GenomeComponent@ GameObject::genome() const
+
+Temps: 2
+
+Variables: 
+ 000: GameObject this
+ 002: (heap) GenomeComponent {noname}
+
+
+- 1,774 -
+    0   2 *    SUSPEND
+    1   2 *    PshVPtr  v0
+    2   4 *    ADDSi    v32, 134217784
+    4   4 *    RDSPtr
+    5   4 *    CALLSYS  275           (GenomeComponent@ GameObject_t::genome())
+    7   2 *    STOREOBJ v2
+            {
+            }
+    8   2 *    LOADOBJ  v2
+            0:
+    9   2 *    RET      2

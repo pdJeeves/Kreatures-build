@@ -1,0 +1,44 @@
+import all;
+
+class EyeBall extends GameObject 
+{
+	method EyeBall(const Anchor location, const Point2F offset) extends GameObject()
+	{
+		mouseable(1);
+		catagory(Catagory::Toy);
+		
+		sprite().file = "eye_ball";
+		sprite().drawOrder = 500;
+		sprite().scale = {2, 2};
+		movement().setPosition(location, offset, null);
+	
+		physics().elasticity = .5;
+		physics().friction = .5;
+		
+		physics().respondToPhysicalZones(1); 
+		processingTicks(true);
+	}
+	
+	method initialize(Builder self)
+	{		
+		self.addMovement(Standard);
+		self.addRender(Standard);
+		self.addPhysics(Standard);
+		self.addCollision(Standard);
+	//	self.addLight(Standard);
+		
+//		self.registerScript(Script::Collision, onCollision);
+	}
+	
+	method onCollision(CollisionData data)
+	{
+		playSound("lft2.wav" , 0, 0);
+	}
+	
+	method test1() 
+	{
+	}
+	method test2() 
+	{
+	}
+}

@@ -1,0 +1,11 @@
+MainCamera::MainCamera()
+
+Temps: 
+
+Variables: 
+ 000: MainCamera this
+
+
+    0   0 *    PshVPtr  v0
+    1   2 *    CALL     705           (GameObject::GameObject())
+    3   0 *    RET      2

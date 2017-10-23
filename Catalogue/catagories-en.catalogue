@@ -1,0 +1,38 @@
+ 
+ @translate
+ string[] "Catagory List" = {
+	"Hand",
+	"Weather",
+	"Nest",
+	"Egg",
+	"Critter",
+	"Beast",
+	"Bug",
+	"Pest",
+	"Herb",
+	"Plant",
+	"Weed",
+	"Detritus",
+	"Flower",
+	"Seed",
+	"Leaf",
+	"Fruit",
+	"Vegetable",
+	"Food",
+	"Drink",
+	"Potion",
+	"Toy",
+	"Music",
+	"Button",
+	"Incubator",
+	"Computer",
+	"Gadget",
+	"Machine",
+	"Vendor",
+	"Lift",
+	"Mover",
+	"Portal",
+	"Tool",
+	"Hot"
+ }
+ 

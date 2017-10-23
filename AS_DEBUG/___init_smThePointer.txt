@@ -1,0 +1,18 @@
+<unrecognized token> _unnamed_function_()
+
+Temps: 2
+
+Variables: 
+ 002: (heap) Pointer {noname}
+
+
+- 52,9 -
+    0   2 *    SUSPEND
+    1   2 *    CALL     770           (Engine::Pointer@ Pointer())
+    3   2 *    STOREOBJ v2
+    4   2 *    PshVPtr  v2
+    5   4 *    PGA      0x2f88e7e1c48          (i:3266565774408, f:1.6139e-311)
+    8   6 *    REFCPY   0x2f88cc0ffc0          (i:3266536603584, f:1.61388e-311)
+   11   4 *    PopPtr
+   12   2 *    FREE     v2, 0x8cc0ffc0          (type:Pointer)
+   15   2 *    RET      0

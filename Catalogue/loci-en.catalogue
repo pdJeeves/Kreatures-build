@@ -1,0 +1,107 @@
+
+string[] "Recep/Emit Organs" =
+{
+	"Brain",
+	"Organ",
+	"Creature"
+}
+
+string[] "Emitter Tissues" =
+{
+	"Muscle Energy Used",
+	"Circulatory",
+	"Reproductive",
+	"I'm Dead",
+	"Current Gait",
+	"Sensorimotor",
+	"Smell"
+}
+
+string[] "Receptor Tissues" =
+{
+	"Height",
+	"Life Stage",
+	"Circulatory",
+	"Reproductive",
+	"Die",
+	"Gait"
+}
+
+string[] "Reproductive Loci" =
+{
+	"I am Pregnant",
+	"I am Fertile (egg/sperm ready)",
+	"Become Fertile if High",
+	"Receptive To Sperm",
+	"Chance Mutation",
+	"Degree Mutation"
+}
+
+string[] "Sensory Loci" =
+{
+	"Always Active",
+	"Asleep",
+	"Coldness",
+	"Hotness",
+	"Light Level",
+	"Crowdedness",
+	"Radiation",
+	"Time of Day",
+	"Season",
+	"Air Quality",
+//10
+	"Slope Sine (pos)",
+	"Slope Sine (neg)",
+	"Wind Speed (towards)",
+	"Wind Speed (away)",
+	"15",
+	"16",
+	"17"
+}
+
+string[] "Lobe Variables" =
+{
+	"Reward",
+	"Punishment",
+	"Activity",
+	"Anomaly"
+}
+
+string[] "Organ Variables" =
+{
+	"Clock Rate",
+	"Repair Rate",
+	"Life Force",
+	"Injury"
+}
+
+string[] "neurochemistry loci" = 
+{
+	'Excitation',
+	'Inhibition',
+	'Output',
+	'Predictivity'
+}
+
+string[] "Life Stages" = {
+	"Embryo",
+	"Infant",
+	"Child",
+	"Adolescent",
+	"Youth",
+	"Adult",
+	"Old",
+	"Ancient"
+}
+
+string[] "Body Parts" = {
+	"Creature",
+	"Ears",
+	"Head",
+	"Hair",
+	"Body",
+	"Arms",
+	"Legs",
+	"Tail"
+}
+

@@ -1,0 +1,57 @@
+void LiftBase::onDestroy()
+
+Temps: 2, 4
+
+Variables: 
+ 001: uint i
+ 000: LiftBase this
+ 004: (heap) CallButtonBase {noname}
+
+
+- 61,13 -
+    0   4 *    SUSPEND
+               VarDecl  0
+    1   4 *    SetV4    v1, 0x0          (i:0, f:0)
+    3   4 *    JMP      +21              (d:26)
+            4:
+    5   4 *    SUSPEND
+- 63,13 -
+            {
+    6   4 *    SUSPEND
+    7   4 *    PshV4    v1
+    8   5 *    PshVPtr  v0
+    9   7 *    ADDSi    v56, 134217790
+   11   7 *    RDSPtr
+   12   7 *    Thiscall1 897           (CallButtonBase@& array::opIndex(uint))
+   14   4 *    PshRPtr
+   15   6 *    RDSPtr
+   16   6 *    RefCpyV  v4, 0x8cc0e7b0          (type:CallButtonBase)
+   19   6 *    CALLINTF 859           (void GameObject::destroy())
+   21   4 *    FREE     v4, 0x8cc0e7b0          (type:CallButtonBase)
+- 61,45 -
+            }
+            3:
+   24   4 *    SUSPEND
+   25   4 *    IncVi    v1
+- 61,25 -
+            1:
+   26   4 *    SUSPEND
+   27   4 *    PshVPtr  v0
+   28   6 *    ADDSi    v56, 134217790
+   30   6 *    RDSPtr
+   31   6 *    CALLSYS  124           (uint array::get_length() const)
+   33   4 *    CpyRtoV4 v2
+   34   4 *    CMPu     v1, v2
+   36   4 *    JS       -33              (d:5)
+- 66,9 -
+            2:
+   38   4 *    SUSPEND
+   39   4 *    PshC4    0x0          (i:0, f:0)
+   41   5 *    PshVPtr  v0
+   42   7 *    ADDSi    v56, 134217790
+   44   7 *    RDSPtr
+   45   7 *    CALLSYS  125           (void array::set_length(uint))
+- 67,6 -
+   47   4 *    SUSPEND
+            0:
+   48   4 *    RET      2

@@ -1,0 +1,37 @@
+import all;
+
+class PlaceHolder extends GameObject
+{
+        method initialize(Builder self)
+     {
+          self.addMovement(Standard);
+          self.addRender(Standard);
+
+        self.registerScript(Script::Click, onClick);
+    }
+
+     method onClick(Point2F pos)
+     {
+          stdlib::print("current position = ");
+          stdlib::println(this.movement().position().toString());
+     }
+
+     method PlaceHolder(const string spr, int frame, const Anchor anchor, const Point2F position) extends GameObject()
+     {
+          mouseable(1);
+          clickable(1);
+          
+          sprite().file = spr;
+          sprite().frame = frame;
+          sprite().drawOrder = 1000;
+          
+          movement().setPosition(anchor, position, null);
+     }
+}
+
+class Cheese extends PlaceHolder
+{
+     method Cheese(const Anchor anchor, const Point2F position) extends PlaceHolder("pink_lemonade", 12, anchor, position) {}
+}
+
+
