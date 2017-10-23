@@ -15,14 +15,14 @@ Variables:
                VarDecl  1
     0   4 *    SUSPEND
     1   4 *    PSF      v2
-    2   6 *    ALLOC    0x21ce4ee6510, 334             (type:Box2F, Box2F::Box2F())
+    2   6 *    ALLOC    0x10e6f2928f0, 334             (type:Box2F, Box2F::Box2F())
     6   4 *    PshVPtr  v-4
     7   6 *    PshVPtr  v2
     8   8 *    COPY     v4, 67108884
    10   6 *    PopPtr
    11   4 *    VAR      v2
    12   6 *    PshVPtr  v-2
-   13   8 *    RefCpyV  v4, 0xe4ee6bf0          (type:GameObject_t)
+   13   8 *    RefCpyV  v4, 0x6f293430          (type:GameObject_t)
    16   8 *    PopPtr
    17   6 *    VAR      v4
    18   8 *    PshVPtr  v0
@@ -34,6 +34,6 @@ Variables:
 - 1,339 -
    26   4 *    SUSPEND
             0:
-   27   4 *    FREE     v-2, 0xe4ee6bf0          (type:GameObject_t)
-   30   4 *    FREE     v-4, 0xe4ee6510          (type:Box2F)
+   27   4 *    FREE     v-2, 0x6f293430          (type:GameObject_t)
+   30   4 *    FREE     v-4, 0x6f2928f0          (type:Box2F)
    33   4 *    RET      6

@@ -46,14 +46,14 @@ Variables:
    14  58 *    CALLSYS  45           (string::string(const string&in))
                ObjInfo  v14, 1
    16  54 *    PSF      v14
-   17  56 *    ALLOC    0x21ce4eb7a70, 45             (type:string, string::string(const string&in))
+   17  56 *    ALLOC    0x10e6f265f30, 45             (type:string, string::string(const string&in))
    21  52 *    PSF      v14
    22  54 *    CALLSYS  46           (string::~string())
                ObjInfo  v14, 0
    24  52 *    VAR      v16
    25  54 *    GETOBJ   0
    26  54 *    CALLSYS  245           (SpriteFile@ SpriteFile(string))
-   28  52 *    FREE     v4, 0xe4f5ed30          (type:SpriteFile)
+   28  52 *    FREE     v4, 0x6f310a20          (type:SpriteFile)
    31  52 *    STOREOBJ v4
 - 54,3 -
    32  52 *    SUSPEND
@@ -112,7 +112,7 @@ Variables:
   113  56 *    PshVPtr  v24
   114  58 *    CALL     626           (uint16[]@ $list(int&in) { repeat uint16 })
   116  56 *    STOREOBJ v22
-  117  56 *    FREE     v24, 0xe6c70a50          (type:)
+  117  56 *    FREE     v24, 0x70d138a0          (type:)
   120  56 *    VAR      v22
   121  58 *    STR      19         (l:8 s:"dispanse")
   122  61 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
@@ -125,7 +125,7 @@ Variables:
   130  62 *    GETREF   2
   131  62 *    GETOBJREF 4
   132  62 *    CALLSYS  638           (bool SpriteFile::addAnimation(const string&in, const uint16[]&in, double = .05, double = - 1))
-  134  52 *    FREE     v22, 0xe4f5d980          (type:array)
+  134  52 *    FREE     v22, 0x6f30d5a0          (type:array)
   137  52 *    PSF      v14
   138  54 *    CALLSYS  46           (string::~string())
 - 57,4 -
@@ -134,7 +134,7 @@ Variables:
   141  52 *    SetV2    v36, 0x9
   143  52 *    PshV4    v36
   144  53 *    PSF      v38
-  145  55 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+  145  55 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
   149  53 *    AllocMem v30, 8
   151  53 *    SetV2    v20, 0x0
   153  53 *    PshV4    v20
@@ -176,7 +176,7 @@ Variables:
   199  55 *    PSF      v28
   200  57 *    CALLSYS  546           (void Point2F::$beh1(const int&in) { float, float })
                ObjInfo  v28, 1
-  202  53 *    FREE     v30, 0xe6c71e00          (type:)
+  202  53 *    FREE     v30, 0x70d12090          (type:)
   205  53 *    PSF      v28
   206  55 *    PshVPtr  v38
   207  57 *    COPY     v2, 67108906
@@ -204,9 +204,9 @@ Variables:
   228  52 *    SetV1    v33, 0x1
   230  52 *    PshV4    v33
   231  53 *    PshVPtr  v0
-  232  55 *    RefCpyV  v40, 0xe4f5e6a0          (type:GameObject)
+  232  55 *    RefCpyV  v40, 0x6f310160          (type:GameObject)
   235  55 *    CALLINTF 843           (void GameObject::set_canClick(bool))
-  237  52 *    FREE     v40, 0xe4f5e6a0          (type:GameObject)
+  237  52 *    FREE     v40, 0x6f310160          (type:GameObject)
 - 62,3 -
   240  52 *    SUSPEND
                VarDecl  4
@@ -219,14 +219,14 @@ Variables:
   250  52 *    PshVPtr  v44
   251  54 *    CALLSYS  651           (SpriteComponent@ RenderComponent::opCast())
   253  52 *    STOREOBJ v48
-  254  52 *    FREE     v44, 0xe4f5e010          (type:RenderComponent)
+  254  52 *    FREE     v44, 0x6f30f670          (type:RenderComponent)
   257  52 *    JMP      +1              (d:260)
             2:
   259  52 *    ClrVPtr  v48
             3:
   260  52 *    PshVPtr  v48
-  261  54 *    RefCpyV  v42, 0xe4f5fc80          (type:SpriteComponent)
-  264  54 *    FREE     v48, 0xe4f5fc80          (type:SpriteComponent)
+  261  54 *    RefCpyV  v42, 0x6f30f440          (type:SpriteComponent)
+  264  54 *    FREE     v48, 0x6f30f440          (type:SpriteComponent)
   267  54 *    PopPtr
 - 63,3 -
   268  52 *    SUSPEND
@@ -251,14 +251,14 @@ Variables:
 - 66,3 -
   291  52 *    SUSPEND
   292  52 *    PSF      v52
-  293  54 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
+  293  54 *    ALLOC    0x10e6f2abb30, 302             (type:Angle, Angle::Angle())
   297  52 *    PshVPtr  v-6
   298  54 *    PshVPtr  v52
   299  56 *    COPY     v1, 67108882
   301  54 *    PopPtr
   302  52 *    VAR      v52
   303  54 *    PSF      v38
-  304  56 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+  304  56 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
   308  54 *    PshVPtr  v-4
   309  56 *    PshVPtr  v38
   310  58 *    COPY     v2, 67108906
@@ -273,13 +273,13 @@ Variables:
   321  60 *    GETOBJ   4
   322  60 *    GETOBJ   6
   323  60 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
-  325  52 *    FREE     v50, 0xe4f53ab0          (type:MovementComponent)
+  325  52 *    FREE     v50, 0x6f301e80          (type:MovementComponent)
 - 67,3 -
   328  52 *    SUSPEND
-  329  52 *    FREE     v42, 0xe4f5fc80          (type:SpriteComponent)
-  332  52 *    FREE     v4, 0xe4f5ed30          (type:SpriteFile)
+  329  52 *    FREE     v42, 0x6f30f440          (type:SpriteComponent)
+  332  52 *    FREE     v4, 0x6f310a20          (type:SpriteFile)
             0:
-  335  52 *    FREE     v-2, 0xe4eec910          (type:Anchor)
-  338  52 *    FREE     v-4, 0xe4f5e470          (type:Point2F)
-  341  52 *    FREE     v-6, 0xe4eecb40          (type:Angle)
+  335  52 *    FREE     v-2, 0x6f2a18c0          (type:Anchor)
+  338  52 *    FREE     v-4, 0x6f30e2c0          (type:Point2F)
+  341  52 *    FREE     v-6, 0x6f2abb30          (type:Angle)
   344  52 *    RET      8

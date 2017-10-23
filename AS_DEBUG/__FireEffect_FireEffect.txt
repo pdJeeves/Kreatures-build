@@ -31,20 +31,20 @@ Variables:
     8  21 *    SetV1    v3, 0x1
    10  21 *    PshV4    v3
    11  22 *    PshVPtr  v0
-   12  24 *    RefCpyV  v5, 0xe4f5e6a0          (type:GameObject)
+   12  24 *    RefCpyV  v5, 0x6f310160          (type:GameObject)
    15  24 *    CALLINTF 858           (void GameObject::set_processingTicks(bool))
-   17  21 *    FREE     v5, 0xe4f5e6a0          (type:GameObject)
+   17  21 *    FREE     v5, 0x6f310160          (type:GameObject)
 - 147,3 -
    20  21 *    SUSPEND
    21  21 *    PSF      v9
-   22  23 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
+   22  23 *    ALLOC    0x10e6f2abb30, 302             (type:Angle, Angle::Angle())
    26  21 *    PshVPtr  v-6
    27  23 *    PshVPtr  v9
    28  25 *    COPY     v1, 67108882
    30  23 *    PopPtr
    31  21 *    VAR      v9
    32  23 *    PSF      v11
-   33  25 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+   33  25 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
    37  23 *    PshVPtr  v-4
    38  25 *    PshVPtr  v11
    39  27 *    COPY     v2, 67108906
@@ -59,7 +59,7 @@ Variables:
    50  29 *    GETOBJ   4
    51  29 *    GETOBJ   6
    52  29 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
-   54  21 *    FREE     v7, 0xe4f53ab0          (type:MovementComponent)
+   54  21 *    FREE     v7, 0x6f301e80          (type:MovementComponent)
 - 149,3 -
    57  21 *    SUSPEND
                VarDecl  3
@@ -72,14 +72,14 @@ Variables:
    67  21 *    PshVPtr  v15
    68  23 *    CALLSYS  427           (EmitterComponent@ RenderComponent::opCast())
    70  21 *    STOREOBJ v19
-   71  21 *    FREE     v15, 0xe4f5e010          (type:RenderComponent)
+   71  21 *    FREE     v15, 0x6f30f670          (type:RenderComponent)
    74  21 *    JMP      +1              (d:77)
             1:
    76  21 *    ClrVPtr  v19
             2:
    77  21 *    PshVPtr  v19
-   78  23 *    RefCpyV  v13, 0xe4f524d0          (type:EmitterComponent)
-   81  23 *    FREE     v19, 0xe4f524d0          (type:EmitterComponent)
+   78  23 *    RefCpyV  v13, 0x6f301c50          (type:EmitterComponent)
+   81  23 *    FREE     v19, 0x6f301c50          (type:EmitterComponent)
    84  23 *    PopPtr
 - 150,3 -
    85  21 *    SUSPEND
@@ -89,7 +89,7 @@ Variables:
    91  21 *    STOREOBJ v15
    92  21 *    LoadRObjR v15, v48, 67108907
    95  21 *    WRTV2    v3
-   96  21 *    FREE     v15, 0xe4f5e010          (type:RenderComponent)
+   96  21 *    FREE     v15, 0x6f30f670          (type:RenderComponent)
 - 151,3 -
    99  21 *    SUSPEND
   100  21 *    CALL     826           (ParticleEmitterDatablock@ GetFireEmitter())
@@ -111,12 +111,12 @@ Variables:
   119  21 *    STOREOBJ v21
   120  21 *    PshVPtr  v21
   121  23 *    CALLSYS  526           (void ParticleEmitterDatablock::edit())
-  123  21 *    FREE     v21, 0xe4f531f0          (type:ParticleEmitterDatablock)
+  123  21 *    FREE     v21, 0x6f302740          (type:ParticleEmitterDatablock)
 - 155,3 -
   126  21 *    SUSPEND
-  127  21 *    FREE     v13, 0xe4f524d0          (type:EmitterComponent)
+  127  21 *    FREE     v13, 0x6f301c50          (type:EmitterComponent)
             0:
-  130  21 *    FREE     v-2, 0xe4eec910          (type:Anchor)
-  133  21 *    FREE     v-4, 0xe4f5e470          (type:Point2F)
-  136  21 *    FREE     v-6, 0xe4eecb40          (type:Angle)
+  130  21 *    FREE     v-2, 0x6f2a18c0          (type:Anchor)
+  133  21 *    FREE     v-4, 0x6f30e2c0          (type:Point2F)
+  136  21 *    FREE     v-6, 0x6f2abb30          (type:Angle)
   139  21 *    RET      8

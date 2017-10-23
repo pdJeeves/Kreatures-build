@@ -28,35 +28,35 @@ Variables:
     8  12 *    SetV1    v3, 0x1
    10  12 *    PshV4    v3
    11  13 *    PshVPtr  v0
-   12  15 *    RefCpyV  v5, 0xe4f5e6a0          (type:GameObject)
+   12  15 *    RefCpyV  v5, 0x6f310160          (type:GameObject)
    15  15 *    CALLINTF 843           (void GameObject::set_canClick(bool))
-   17  12 *    FREE     v5, 0xe4f5e6a0          (type:GameObject)
+   17  12 *    FREE     v5, 0x6f310160          (type:GameObject)
 - 13,9 -
    20  12 *    SUSPEND
    21  12 *    PshC4    0x16          (i:22, f:3.08286e-44)
    23  13 *    PshVPtr  v0
-   24  15 *    RefCpyV  v5, 0xe4f5e6a0          (type:GameObject)
+   24  15 *    RefCpyV  v5, 0x6f310160          (type:GameObject)
    27  15 *    CALLINTF 841           (void GameObject::set_catagory(Catagory))
-   29  12 *    FREE     v5, 0xe4f5e6a0          (type:GameObject)
+   29  12 *    FREE     v5, 0x6f310160          (type:GameObject)
 - 15,9 -
    32  12 *    SUSPEND
    33  12 *    VAR      v-2
    34  14 *    PshVPtr  v0
    35  16 *    ADDSi    v40, 134217783
    37  16 *    GETOBJREF 2
-   38  16 *    REFCPY   0x21ce4f60310          (i:2323123667728, f:1.14778e-311)
+   38  16 *    REFCPY   0x10e6f310390          (i:1161506653072, f:5.73861e-312)
    41  14 *    PopPtr
 - 16,9 -
    42  12 *    SUSPEND
    43  12 *    PSF      v10
-   44  14 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
+   44  14 *    ALLOC    0x10e6f2abb30, 302             (type:Angle, Angle::Angle())
    48  12 *    PshVPtr  v-8
    49  14 *    PshVPtr  v10
    50  16 *    COPY     v1, 67108882
    52  14 *    PopPtr
    53  12 *    VAR      v10
    54  14 *    PSF      v12
-   55  16 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+   55  16 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
    59  14 *    PshVPtr  v-6
    60  16 *    PshVPtr  v12
    61  18 *    COPY     v2, 67108906
@@ -71,12 +71,12 @@ Variables:
    72  20 *    GETOBJ   4
    73  20 *    GETOBJ   6
    74  20 *    CALLSYS  492           (void MovementComponent::setPosition(const Anchor&in, Point2F, Angle = Angle ( )))
-   76  12 *    FREE     v8, 0xe4f53ab0          (type:MovementComponent)
+   76  12 *    FREE     v8, 0x6f301e80          (type:MovementComponent)
 - 17,6 -
    79  12 *    SUSPEND
             0:
-   80  12 *    FREE     v-2, 0xe4f60310          (type:LiftBase)
-   83  12 *    FREE     v-4, 0xe4eec910          (type:Anchor)
-   86  12 *    FREE     v-6, 0xe4f5e470          (type:Point2F)
-   89  12 *    FREE     v-8, 0xe4eecb40          (type:Angle)
+   80  12 *    FREE     v-2, 0x6f310390          (type:LiftBase)
+   83  12 *    FREE     v-4, 0x6f2a18c0          (type:Anchor)
+   86  12 *    FREE     v-6, 0x6f30e2c0          (type:Point2F)
+   89  12 *    FREE     v-8, 0x6f2abb30          (type:Angle)
    92  12 *    RET      10

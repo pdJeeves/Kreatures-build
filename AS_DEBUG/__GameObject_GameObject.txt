@@ -18,8 +18,8 @@ Variables:
     6   4 *    PshVPtr  v0
     7   6 *    ADDSi    v32, 134217784
     9   6 *    GETOBJREF 2
-   10   6 *    REFCPY   0x21ce4ee6bf0          (i:2323123170288, f:1.14778e-311)
-   13   4 *    FREE     v2, 0xe4ee6bf0          (type:GameObject_t)
+   10   6 *    REFCPY   0x10e6f293430          (i:1161506141232, f:5.7386e-312)
+   13   4 *    FREE     v2, 0x6f293430          (type:GameObject_t)
    16   4 *    PopPtr
 - 1,206 -
    17   2 *    SUSPEND

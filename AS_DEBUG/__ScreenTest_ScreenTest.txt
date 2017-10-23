@@ -34,27 +34,27 @@ Variables:
    13  19 *    STOREOBJ v4
    14  19 *    LoadRObjR v4, v48, 67108907
    17  19 *    WRTV2    v5
-   18  19 *    FREE     v4, 0xe4f5e010          (type:RenderComponent)
+   18  19 *    FREE     v4, 0x6f30f670          (type:RenderComponent)
 - 12,3 -
    21  19 *    SUSPEND
    22  19 *    PSF      v17
-   23  21 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
+   23  21 *    ALLOC    0x10e6f2abb30, 302             (type:Angle, Angle::Angle())
    27  19 *    PshVPtr  v-8
    28  21 *    PshVPtr  v17
    29  23 *    COPY     v1, 67108882
    31  21 *    PopPtr
    32  19 *    VAR      v17
    33  21 *    PSF      v19
-   34  23 *    ALLOC    0x21ce4ee6510, 334             (type:Box2F, Box2F::Box2F())
+   34  23 *    ALLOC    0x10e6f2928f0, 334             (type:Box2F, Box2F::Box2F())
    38  21 *    PSF      v13
-   39  23 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+   39  23 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
    43  21 *    PshVPtr  v-6
    44  23 *    PshVPtr  v13
    45  25 *    COPY     v2, 67108906
    47  23 *    PopPtr
    48  21 *    VAR      v13
    49  23 *    PSF      v15
-   50  25 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+   50  25 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
    54  23 *    PshVPtr  v-4
    55  25 *    PshVPtr  v15
    56  27 *    COPY     v2, 67108906
@@ -80,12 +80,12 @@ Variables:
    78  27 *    GETOBJ   4
    79  27 *    GETOBJ   6
    80  27 *    CALLSYS  493           (void MovementComponent::setLocation(const Anchor&in, Box2F, Angle = Angle ( )))
-   82  19 *    FREE     v7, 0xe4f53ab0          (type:MovementComponent)
+   82  19 *    FREE     v7, 0x6f301e80          (type:MovementComponent)
 - 13,3 -
    85  19 *    SUSPEND
             0:
-   86  19 *    FREE     v-2, 0xe4eec910          (type:Anchor)
-   89  19 *    FREE     v-4, 0xe4f5e470          (type:Point2F)
-   92  19 *    FREE     v-6, 0xe4f5e470          (type:Point2F)
-   95  19 *    FREE     v-8, 0xe4eecb40          (type:Angle)
+   86  19 *    FREE     v-2, 0x6f2a18c0          (type:Anchor)
+   89  19 *    FREE     v-4, 0x6f30e2c0          (type:Point2F)
+   92  19 *    FREE     v-6, 0x6f30e2c0          (type:Point2F)
+   95  19 *    FREE     v-8, 0x6f2abb30          (type:Angle)
    98  19 *    RET      10

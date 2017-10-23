@@ -11,5 +11,5 @@ Variables:
                VarDecl  0
     0   0 *    SUSPEND
             0:
-    1   0 *    FREE     v-2, 0xe4f5e6a0          (type:GameObject)
+    1   0 *    FREE     v-2, 0x6f310160          (type:GameObject)
     4   0 *    RET      4

@@ -8,9 +8,9 @@ Variables:
 
 - 18,2 -
     0   2 *    SUSPEND
-    1   2 *    PshGPtr  0x21ce4ea2728          (i:2323122890536, f:1.14778e-311)
+    1   2 *    PshGPtr  0x10e70c5dcf8          (i:1161533185272, f:5.73874e-312)
     4   4 *    CHKREF
-    5   4 *    RefCpyV  v2, 0xe4f5fa50          (type:MainCamera)
+    5   4 *    RefCpyV  v2, 0x6f30ff30          (type:MainCamera)
     8   4 *    PopPtr
             {
             }

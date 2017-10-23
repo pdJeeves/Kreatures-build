@@ -28,9 +28,9 @@ Variables:
     1  46 *    SetV1    v1, 0x1
     3  46 *    PshV4    v1
     4  47 *    PshVPtr  v0
-    5  49 *    RefCpyV  v3, 0xe4f5e6a0          (type:GameObject)
+    5  49 *    RefCpyV  v3, 0x6f310160          (type:GameObject)
     8  49 *    CALLINTF 858           (void GameObject::set_processingTicks(bool))
-   10  46 *    FREE     v3, 0xe4f5e6a0          (type:GameObject)
+   10  46 *    FREE     v3, 0x6f310160          (type:GameObject)
 - 78,3 -
    13  46 *    SUSPEND
                VarDecl  1
@@ -43,14 +43,14 @@ Variables:
    23  46 *    PshVPtr  v7
    24  48 *    CALLSYS  651           (SpriteComponent@ RenderComponent::opCast())
    26  46 *    STOREOBJ v11
-   27  46 *    FREE     v7, 0xe4f5e010          (type:RenderComponent)
+   27  46 *    FREE     v7, 0x6f30f670          (type:RenderComponent)
    30  46 *    JMP      +1              (d:33)
             1:
    32  46 *    ClrVPtr  v11
             2:
    33  46 *    PshVPtr  v11
-   34  48 *    RefCpyV  v5, 0xe4f5fc80          (type:SpriteComponent)
-   37  48 *    FREE     v11, 0xe4f5fc80          (type:SpriteComponent)
+   34  48 *    RefCpyV  v5, 0x6f30f440          (type:SpriteComponent)
+   37  48 *    FREE     v11, 0x6f30f440          (type:SpriteComponent)
    40  48 *    PopPtr
 - 79,3 -
    41  46 *    SUSPEND
@@ -76,7 +76,7 @@ Variables:
 - 82,3 -
    65  46 *    SUSPEND
    66  46 *    PSF      v40
-   67  48 *    ALLOC    0x21ce4eecb40, 302             (type:Angle, Angle::Angle())
+   67  48 *    ALLOC    0x10e6f2abb30, 302             (type:Angle, Angle::Angle())
    71  46 *    PSF      v38
    72  48 *    PshVPtr  v0
    73  50 *    CALLINTF 830           (MovementComponent@ GameObject::movement())
@@ -84,7 +84,7 @@ Variables:
    76  48 *    PshVPtr  v25
    77  50 *    CALLSYS  488           (Angle MovementComponent::get_angle() const)
                ObjInfo  v38, 1
-   79  46 *    FREE     v25, 0xe4f53ab0          (type:MovementComponent)
+   79  46 *    FREE     v25, 0x6f301e80          (type:MovementComponent)
    82  46 *    PSF      v38
    83  48 *    PshVPtr  v40
    84  50 *    COPY     v1, 67108882
@@ -92,7 +92,7 @@ Variables:
                ObjInfo  v38, 0
    87  46 *    VAR      v40
    88  48 *    PSF      v42
-   89  50 *    ALLOC    0x21ce4f5e470, 543             (type:Point2F, Point2F::Point2F())
+   89  50 *    ALLOC    0x10e6f30e2c0, 543             (type:Point2F, Point2F::Point2F())
    93  48 *    STR      21         (l:9 s:"dispsense")
    94  51 *    CALLSYS  43           (const string& $str(const int, const uint8&in))
    96  48 *    PshRPtr
@@ -122,9 +122,9 @@ Variables:
   121  54 *    PshVPtr  v29
   122  56 *    CALLSYS  484           (Anchor MovementComponent::toAnchor() const)
                ObjInfo  v37, 1
-  124  52 *    FREE     v29, 0xe4f53ab0          (type:MovementComponent)
+  124  52 *    FREE     v29, 0x6f301e80          (type:MovementComponent)
   127  52 *    PSF      v37
-  128  54 *    ALLOC    0x21ce4eec910, 294             (type:Anchor, Anchor::Anchor(const Anchor&in))
+  128  54 *    ALLOC    0x10e6f2a18c0, 294             (type:Anchor, Anchor::Anchor(const Anchor&in))
                ObjInfo  v37, 0
   132  50 *    VAR      v44
   133  52 *    GETOBJ   0
@@ -132,18 +132,18 @@ Variables:
   135  52 *    GETOBJ   4
   136  52 *    CALL     792           (PinkLemonade@ PinkLemonade(Anchor, Point2F, Angle = Angle ( )))
   138  46 *    STOREOBJ v46
-  139  46 *    FREE     v46, 0xe4f609a0          (type:PinkLemonade)
+  139  46 *    FREE     v46, 0x6f30e950          (type:PinkLemonade)
 - 83,3 -
   142  46 *    SUSPEND
   143  46 *    SetV1    v1, 0x0
   145  46 *    PshV4    v1
   146  47 *    PshVPtr  v0
-  147  49 *    RefCpyV  v3, 0xe4f5e6a0          (type:GameObject)
+  147  49 *    RefCpyV  v3, 0x6f310160          (type:GameObject)
   150  49 *    CALLINTF 858           (void GameObject::set_processingTicks(bool))
-  152  46 *    FREE     v3, 0xe4f5e6a0          (type:GameObject)
+  152  46 *    FREE     v3, 0x6f310160          (type:GameObject)
 - 84,3 -
   155  46 *    SUSPEND
-  156  46 *    FREE     v5, 0xe4f5fc80          (type:SpriteComponent)
+  156  46 *    FREE     v5, 0x6f30f440          (type:SpriteComponent)
             0:
-  159  46 *    FREE     v-2, 0xe4f5e6a0          (type:GameObject)
+  159  46 *    FREE     v-2, 0x6f310160          (type:GameObject)
   162  46 *    RET      4

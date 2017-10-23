@@ -15,8 +15,8 @@ Variables:
     5   4 *    PshVPtr  v0
     6   6 *    ADDSi    v32, 134217785
     8   6 *    GETOBJREF 2
-    9   6 *    REFCPY   0x21ce4f60540          (i:2323123668288, f:1.14778e-311)
-   12   4 *    FREE     v2, 0xe4f60540          (type:TriggerZone_t)
+    9   6 *    REFCPY   0x10e6f310c50          (i:1161506655312, f:5.73861e-312)
+   12   4 *    FREE     v2, 0x6f310c50          (type:TriggerZone_t)
    15   4 *    PopPtr
 - 1,114 -
    16   2 *    SUSPEND

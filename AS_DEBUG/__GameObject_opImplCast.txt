@@ -12,7 +12,7 @@ Variables:
     1   2 *    PshVPtr  v0
     2   4 *    ADDSi    v32, 134217784
     4   4 *    RDSPtr
-    5   4 *    RefCpyV  v2, 0xe4ee6bf0          (type:GameObject_t)
+    5   4 *    RefCpyV  v2, 0x6f293430          (type:GameObject_t)
     8   4 *    PopPtr
             {
             }
